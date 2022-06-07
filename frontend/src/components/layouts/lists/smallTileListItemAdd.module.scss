@@ -1,0 +1,57 @@
+.plusItem {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* NOTE: Example images at this point seem to be using this, so changed it here. */
+    height: 91.15px;
+    width: 85px;
+    border-radius: 6px;
+    background-color: rgba(47, 52, 79, 0.45);
+    cursor: pointer;
+    margin-right: 10px;
+    margin-bottom: 20px;
+
+    [data-plus] {
+        position: absolute;
+        top: -11px;
+        right: -11px;
+    }
+}
+
+.image {
+    border-radius: 6px;
+    width: 38px;
+}
+
+.regularItem {
+    position: relative;
+    /* NOTE: Example images at this point seem to be using this, so changed it here. */
+    height: 91.15px;
+    width: 85px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    background-color: #68bbd0;
+}
+
+.verticalPlusLine {
+    position: absolute;
+    height: 31px;
+    width: 1px;
+    border: 2px solid #ffffff;
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+}
+
+.horizontalPlusLine {
+    position: absolute;
+    width: 31px;
+    height: 1px;
+    border: 2px solid #ffffff;
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+}

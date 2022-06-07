@@ -1,0 +1,13 @@
+Welcome to Jaspr at Home!
+
+We hope having access to things you saved in the app can be helpful as you continue on your path. Download Jaspr at Home to your phone and complete your set up.
+
+iOS:{% autoescape off %} https://apps.apple.com/us/app/jaspr-at-home/id1520514621 {% endautoescape %}
+
+Android:{% autoescape off %} https://play.google.com/store/apps/details?id=com.jasprhealth.jah&amp;hl=en_US {% endautoescape %}
+
+Sincerely,
+
+Team Jaspr
+
+Having trouble with the links? Search Jaspr at Home in Apple's App Store or Google's Google Play store to download Jaspr at Home.

@@ -1,0 +1,44 @@
+.person {
+    display: flex;
+    max-height: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 0;
+    margin: 0 27px 0 0;
+    flex: 0 0 203px;
+    transition: flex-basis 500ms ease-in-out;
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.personOpen {
+    flex: 0 0 534px;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+}
+
+.detailImage {
+    width: 203px;
+}
+
+.banner {
+    height: 37px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 1);
+    align-self: flex-start;
+    width: 203px;
+}
+
+.stories {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    overflow-y: auto;
+}

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="44px" height="27px" viewBox="0 0 44 27" version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>toggled</title>
+    <g id="Contacts" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="CC:-Shared-Stories:-Hotline" transform="translate(-321.000000, -506.000000)">
+            <g id="toggled" transform="translate(322.000000, 507.000000)">
+                <rect id="Rectangle" stroke="#5B6599" stroke-width="2" fill="#5B6599" stroke-linejoin="round" x="0" y="0" width="42" height="25" rx="5"></rect>
+                <text id="CC" font-size="18" font-weight="bold" letter-spacing="0.135" fill="#FFFFFF">
+                    <tspan x="8.04175781" y="19">CC</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

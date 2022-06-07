@@ -1,0 +1,121 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+argon2-cffi = "==21.3.0"  # https://github.com/hynek/argon2-cffi
+boto3 = "==1.21.3"  # https://github.com/boto/boto3
+cryptography = "==36.0.2"  # https://github.com/pyca/cryptography
+Django = "==3.2.13"  # https://www.djangoproject.com/
+django-admin-sortable2 = "==1.0.4"  # https://github.com/jrief/django-admin-sortable2
+django-better-admin-arrayfield="==1.4.0"  # https://github.com/gradam/django-better-admin-arrayfield
+django-cache-memoize="==0.1.10"  # https://github.com/peterbe/django-cache-memoize
+django-colorful="==1.3"  # https://github.com/charettes/django-colorful
+django-compressor = "==3.1"  # https://github.com/django-compressor/django-compressor
+django-cors-headers="==3.7.0"  # https://github.com/adamchainz/django-cors-headers
+django-crispy-forms="==1.9.1"  # https://github.com/django-crispy-forms/django-crispy-forms
+django-csp="==3.7"  # https://github.com/mozilla/django-csp
+django-environ="==0.4.5"  # https://github.com/joke2k/django-environ
+django-extensions="==2.2.9"  # https://github.com/django-extensions/django-extensions
+django-feature-policy="==3.4.0"  # https://github.com/adamchainz/django-feature-policy
+django-filter="==2.4.0"  # https://github.com/carltongibson/django-filter
+django-ipware="==3.0.1"  # https://github.com/un33k/django-ipware
+django-json-widget="==1.0.1"  # https://github.com/jmrivas86/django-json-widget
+django-model-utils="==4.0.0"  # https://github.com/jazzband/django-model-utils
+django-netfields="==1.2.2"  # https://github.com/jimfunk/django-postgresql-netfields
+django-otp = "==1.1.3"  # https://github.com/django-otp/django-otp
+django-redis = "==5.2.0"  # https://github.com/jazzband/django-redis
+django-rest-knox = "==4.2.0"  # https://github.com/James1345/django-rest-knox
+django-rq = "==2.5.1"  # https://github.com/rq/django-rq
+# NOTE: Be careful which commit is being pointed to, especially when upgrading. The
+# `micahlyle/django-rq-scheduler` `tom-price` branch is currently intended.
+django-rq-scheduler={git="https://todd-cullen@bitbucket.org/ebpi/django-rq-scheduler.git@jaspr"}
+django-session-security="==2.6.6"  # https://github.com/yourlabs/django-session-security
+django-simple-history = "==3.0.0"  # https://github.com/treyhunner/django-simple-history
+django-taggit="==1.3.0"  # https://github.com/jazzband/django-taggit
+django-twilio = "==0.13.2"  # https://github.com/rdegges/django-twilio
+djangorestframework = "==3.13.1"  # https://github.com/encode/django-rest-framework
+djangorestframework-camel-case="==1.2.0"  # https://github.com/vbabiy/djangorestframework-camel-case
+# NOTE: This is the fork of `django-fernet-fields` (see
+# https://github.com/orcasgit/django-fernet-fields/issues/28) that we upgraded to
+# because as of the time of writing (2022-03-16), `django-fernet-fields` had been
+# abandoned, but the fork is/was maintained.
+# Other NOTE: When upgrading `djfernet`, see if we can upgrade `cryptography`, as it's a
+# dependency of `djfernet`.
+djfernet = "==0.8.1"  # https://github.com/yourlabs/djfernet
+gunicorn="==20.0.4"  # https://github.com/benoitc/gunicorn
+jsonschema="==3.2.0"  # https://github.com/Julian/jsonschema
+# NOTE: Used by `redis` (and hence `rq`, etc.) as preferred parser is available which
+# speeds up certain things so we include it.
+hiredis = "==2.0.0"  # https://github.com/redis/hiredis-py
+# Should update somewhat frequently to have up to date phone number information. #
+# NOTE: We're using `phonenumberslite` instead of `phonenumbers` to keep the memory
+# footprint lower. As far as I'm aware at the time of writing, we don't need the
+# geocoding, carrier, and timezone metadata (we're not using it, etc.) If we ever
+# wanted or needed that, we can switch to the `phonenumbers` version, just be aware it
+# will add a higher memory footprint. See the below two links for more information:
+# 1. https://github.com/stefanfoulis/django-phonenumber-field#installation
+# 2. https://github.com/daviddrysdale/python-phonenumbers#memory-usage
+phonenumberslite="==8.12.4"  # https://github.com/daviddrysdale/python-phonenumbers
+psycopg2 = "==2.9.3"  #--no-binary psycopg2  # https://www.psycopg.org/
+Pillow = "==9.0.1"  # https://github.com/python-pillow/Pillow
+pygments="==2.7.2"  # https://github.com/pygments/pygments
+pyjwt="==2.4.0"  # https://github.com/jpadilla/pyjwt
+pytz="==2020.1"  # https://github.com/stub42/pytz
+qrcode="==6.1"  # https://github.com/lincolnloop/python-qrcode
+redis="==3.5.3"  # https://github.com/andymccurdy/redis-py
+requests="==2.26.0"  # https://github.com/psf/requests
+responses = "==0.13.4"
+rest-condition="==1.0.3"  # https://github.com/caxap/rest_condition0
+rq = "==1.10.1"  # https://github.com/rq/rq
+rq-scheduler = "==0.11.0"  # https://github.com/rq/rq-scheduler
+sentry-sdk="==0.17.0"  # https://github.com/getsentry/sentry-python
+# NOTE: Make sure this is an acceptable version for `django-twilio` before upgrading
+# (I.E. don't bump a major version before checking there).
+twilio="==6.44.1"  # https://github.com/twilio/twilio-python
+whitenoise={version="==5.1.0", extras=["brotli"]}  # https://github.com/evansd/whitenoise
+python-dateutil="==2.8.1" # https://github.com/dateutil/dateutil/
+fuzzywuzzy="==0.18.0"  # https://github.com/seatgeek/fuzzywuzzy
+python-levenshtein="==0.12.2"  # https://github.com/ztane/python-Levenshtein
+## PRODUCTION DEPS
+# For anonymizing fixtures dumped from production
+faker="==4.1.2"  # https://github.com/joke2k/faker/
+# Django
+# ------------------------------------------------------------------------------
+django-storages = "==1.12.3"  # https://github.com/jschneier/django-storages
+django-anymail = "==8.5"  # https://github.com/anymail/django-anymail
+model-bakery = "==1.4.0"
+werkzeug = "==2.0.3"
+coverage = "==6.3.1"
+mypy = "==0.910"
+black = "==22.1.0"
+typed-ast = "==1.5.2"
+
+[dev-packages]
+before-after="==1.0.1"  # https://github.com/c-oreills/before_after
+black="==22.1.0"  # https://github.com/psf/black
+coverage={version="==6.0b1", extras=["toml"]}  # https://github.com/nedbat/coveragepy
+django-coverage-plugin="==1.8.0"  # https://github.com/nedbat/django_coverage_plugin
+django-extensions="==2.2.9"  # https://github.com/django-extensions/django-extensions
+django-silk="==4.3.0"  # https://github.com/jazzband/django-silk
+django-stubs="==1.9.0"  # https://github.com/typeddjango/django-stubs
+flake8="==3.8.3"  # https://github.com/PyCQA/flake8
+flake8-isort="==4.1.1"  # https://github.com/gforcada/flake8-isort
+freezegun="==0.3.15"  # https://github.com/spulec/freezegun
+ipdb="==0.13.2"  # https://github.com/gotcha/ipdb
+isort="==5.10.1"  # https://github.com/timothycrosley/isort
+model-bakery="==1.1.0"  # https://github.com/model-bakers/model_bakery
+parameterized="==0.7.4"  # https://github.com/wolever/parameterized
+pipdeptree="==0.13.2"  # https://github.com/naiquevin/pipdeptree
+pre-commit="==2.7.1"  # https://github.com/pre-commit/pre-commit/releases
+responses="==0.13.4"  # https://github.com/getsentry/responses
+safety="==1.9.0"  # https://github.com/pyupio/safety
+# NOTE: `tblib` is for running tests in parallel.
+tblib="==1.6.0"  # https://github.com/ionelmc/python-tblib
+# NOTE: `Werkzeug` is for `runserver_plus` in local docker `django` service.
+Werkzeug="==2.0.2"  # https://github.com/pallets/werkzeug
+gunicorn="==20.0.4"  # https://github.com/benoitc/gunicorn
+
+[requires]
+python_version = "3.10"

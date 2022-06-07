@@ -1,0 +1,65 @@
+{
+    "expo": {
+        "name": "Jaspr at Home",
+        "slug": "jah",
+        "privacy": "unlisted",
+        "platforms": ["ios", "android"],
+        "orientation": "default",
+        "icon": "./icon.png",
+        "entryPoint": "./src/index.tsx",
+        "splash": {
+            "image": "./src/assets/splash.png",
+            "resizeMode": "cover",
+            "backgroundColor": "#ffffff"
+        },
+        "updates": {
+            "fallbackToCacheTimeout": 0
+        },
+        "assetBundlePatterns": ["**/*"],
+        "ios": {
+            "bundleIdentifier": "com.jasprhealth.jah",
+            "buildNumber": "8",
+            "supportsTablet": false,
+            "requireFullScreen": true,
+            "infoPlist": {
+                "NSFaceIDUsageDescription": "Authenticate Jaspr with your device"
+            }
+        },
+        "android": {
+            "package": "com.jasprhealth.jah",
+            "versionCode": 8,
+            "permissions": ["USE_FINGERPRINT", "USE_BIOMETRIC"]
+        },
+        "androidStatusBar": {
+            "backgroundColor": "#2f344f",
+            "translucent": false,
+            "barStyle": "light-content"
+        },
+        "packagerOpts": {
+            "config": "metro.config.js",
+            "sourceExts": [
+                "ts",
+                "tsx",
+                "native.tsx",
+                "native.ts",
+                "js",
+                "jsx",
+                "css",
+                "scss",
+                "sass",
+                "svg"
+            ]
+        },
+        "description": "",
+        "hooks": {
+            "postPublish": [
+                {
+                    "file": "sentry-expo/upload-sourcemaps",
+                    "config": {
+                        "organization": "jaspr"
+                    }
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,124 @@
+$header-height: 97px;
+
+.container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-shrink: 0;
+    background-color: rgba(255, 255, 255, 1);
+
+    header {
+        position: relative;
+        display: flex;
+        flex-shrink: 0;
+        height: $header-height;
+        padding: 0 34px;
+        border-bottom: 1px solid rgba(216, 216, 216, 1);
+        align-items: center;
+
+        @media print {
+            display: none;
+        }
+
+        .documentationNav {
+            display: flex;
+            height: 100%;
+            align-items: flex-end;
+            flex: 1;
+            padding: 0 60px;
+
+            a {
+                position: relative;
+                margin-right: 90px;
+                padding-bottom: 7px;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+
+                &.active {
+                    border-bottom: 7px solid #117383;
+                    background-color: rgba(255, 255, 255, 1);
+                    padding-bottom: 0;
+
+                    &:before {
+                        position: absolute;
+                        content: '';
+                        width: 8px;
+                        height: 1px;
+                        left: -8px;
+                        bottom: -8px;
+                        background: white;
+                    }
+
+                    &:after {
+                        position: absolute;
+                        content: '';
+                        width: 8px;
+                        height: 1px;
+                        right: -8px;
+                        bottom: -8px;
+                        background: white;
+                    }
+                }
+            }
+        }
+
+        .backButton {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* Note extra width and height than needed for display to make larger touch target */
+            width: 30px;
+            height: 30px;
+            top: 24px;
+            left: 13px;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .buttons {
+            display: flex;
+            margin-left: auto;
+
+            button {
+                margin-right: 23px;
+            }
+        }
+    }
+
+    a,
+    a:visited {
+        color: rgba(0, 0, 0, 1);
+        text-decoration: none;
+    }
+
+    main {
+        display: flex;
+        flex-direction: row;
+        flex-grow: 1;
+        flex-shrink: 0;
+        height: calc(100% - #{$header-height});
+
+        section {
+            flex: 1;
+            background-color: rgba(246, 246, 246, 1);
+            &:first-child {
+                padding: 39px 12px;
+                padding-left: 40px;
+            }
+            &:last-child {
+                padding: 40px 12px;
+            }
+        }
+    }
+
+    .tooltip {
+        padding: 1.2rem;
+        background: linear-gradient(270deg, rgba(59, 74, 103, 1) 0.5%, rgba(76, 82, 107, 1) 100%);
+        border-radius: 0.5rem;
+        filter: drop-shadow(4px 4px 2px rgba(0, 0, 0, 0.15));
+        opacity: 1 !important;
+    }
+}

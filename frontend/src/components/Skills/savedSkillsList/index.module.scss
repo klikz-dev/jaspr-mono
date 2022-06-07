@@ -1,0 +1,5 @@
+@import '../../layouts/lists/smallTileList.module.scss';
+
+.list {
+    composes: list;
+}

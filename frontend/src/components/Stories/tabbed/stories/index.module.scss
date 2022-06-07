@@ -1,0 +1,26 @@
+.container {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    flex: 1;
+    background-color: #48495c;
+    border-radius: 6px;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.header {
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+.headerText {
+    font-size: 1.6rem;
+    color: #fff;
+    opacity: 0.9;
+}
+
+.videosContainer {
+    width: 100%;
+    margin: 13px;
+}

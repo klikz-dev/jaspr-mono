@@ -1,0 +1,101 @@
+[
+    {
+        "uid": "jahOnboardWelcome",
+        "guide": ["Hi, ${guide} here. I'm glad to see you downloaded the app!"],
+        "actions": [
+            {
+                "type": "buttons",
+                "buttons": [{ "label": "🎉" }]
+            }
+        ]
+    },
+    {
+        "uid": "jahOnboardToughTime",
+        "guide": [
+            "You may be going through a difficult time right now.",
+            "My hope is that what's here in the app can help."
+        ],
+        "actions": [
+            {
+                "type": "buttons",
+                "buttons": [{ "label": "How?" }]
+            }
+        ]
+    },
+    {
+        "uid": "jahOnboardShowHow",
+        "guide": ["I'll show you."],
+        "actions": [
+            {
+                "type": "buttons",
+                "buttons": [{ "label": "Okay" }]
+            }
+        ]
+    },
+    {
+        "uid": "jahOnboardSlideShow",
+        "actions": [
+            {
+                "type": "slideshow",
+                "slides": [
+                    {
+                        "text": "Find your favorite videos and supportive contacts on the home page.",
+                        "imageUrl": "jah_onboarding/home.mp4"
+                    },
+                    {
+                        "text": "Hear stories from people with lived experience on the Shared Stories section.",
+                        "imageUrl": "jah_onboarding/sharedStories.mp4"
+                    },
+                    {
+                        "text": "I want to make it easier to use your stability plan. You can see your plan here.",
+                        "imageUrl": "jah_onboarding/stabilityPlan.mp4"
+                    },
+                    {
+                        "text": "We can walk through it step by step here in the 'Distress Survival Guide.'",
+                        "imageUrl": "jah_onboarding/walkthrough.mp4"
+                    },
+                    {
+                        "text": "Plus, some additional videos and skills for getting through difficult times.",
+                        "imageUrl": "jah_onboarding/comfortAndSkills.mp4"
+                    },
+                    {
+                        "text": "I've put some together some contacts so they're all in one place for you.",
+                        "imageUrl": "jah_onboarding/contacts.mp4"
+                    },
+                    {
+                        "text": "I've also included some information about how to get the help you need from supportive people.",
+                        "imageUrl": "jah_onboarding/contactsMoreInfo.mp4"
+                    }
+                ]
+            }
+        ]
+    },
+
+    {
+        "uid": "jahOnboardDisclaimer",
+        "guide": [
+            "The app has a lot that can help in a crisis. But it's not a substitute for professional help from a doctor or therapist.",
+            "I really want you get the right help in the hardest times.",
+            "If you are in a medical emergency or contemplating acting on thoughts of suicide, call 911 or the National Suicide Prevention Lifeline (1-800-273-8255) immediately.",
+            "Does that work for you?"
+        ],
+        "actions": [
+            {
+                "type": "buttons",
+                "buttons": [{ "label": "Got it" }]
+            }
+        ]
+    },
+
+    {
+        "uid": "jahOnboardGlad",
+        "guide": [
+            "I'm really glad you took the step to use this app and have access to these resources."
+        ],
+        "actions": [
+            {
+                "type": "homeButton"
+            }
+        ]
+    }
+]

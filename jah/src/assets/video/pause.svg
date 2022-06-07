@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="13px" height="17px" viewBox="0 0 13 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>pause</title>
+    <g id="Video-Layouts" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round">
+        <g id="pause" transform="translate(1.500000, 2.000000)" stroke="#FFFFFF" stroke-width="4">
+            <line x1="1" y1="0" x2="1" y2="13" id="Line"></line>
+            <line x1="9" y1="0" x2="9" y2="13" id="Line"></line>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,105 @@
+.login {
+    display: flex;
+    width: 100%;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 724px;
+    align-items: center;
+}
+
+.logo {
+    width: 86px;
+    height: 86px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    padding: 0 20px;
+    width: 100%;
+}
+
+.label {
+    color: #ffffff;
+    font-size: 20px;
+    letter-spacing: 0.15px;
+}
+
+.inputContainer {
+    display: flex;
+    height: 59px;
+    width: 100%;
+    max-width: 400px;
+    margin: 10px 0;
+    padding: 0 16px;
+    justify-content: center;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.input {
+    border: none;
+    color: rgba(255, 255, 255, 1);
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.submitButton {
+    display: flex;
+    width: 100%;
+    max-width: 400px;
+    height: 59px;
+    background-color: rgba(31, 33, 50, 1);
+    border-radius: 8px;
+    align-items: center;
+    justify-content: center;
+    border: none;
+}
+
+.submitText {
+    color: rgba(255, 255, 255, 1);
+    font-size: 18px;
+    letter-spacing: 0.15px;
+}
+
+.error {
+    margin: 10px;
+    color: orangered;
+}
+
+.forgot {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+    color: rgba(255, 255, 255, 1);
+    font-size: 16px;
+    letter-spacing: 0;
+}
+
+.signupRule {
+    border-top-width: 1px;
+    border-top-color: #979797;
+}
+
+.signupButton {
+    display: flex;
+    height: 59px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 1);
+    align-items: center;
+    justify-content: center;
+}
+
+.signupButtonText {
+    color: rgba(64, 68, 95, 1);
+    font-size: 18px;
+    letter-spacing: 0.15px;
+}

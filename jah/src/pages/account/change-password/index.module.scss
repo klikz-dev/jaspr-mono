@@ -1,0 +1,108 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    flex-grow: 1;
+
+    @media only screen and (min-width: 1024px) {
+        flex-direction: row;
+        background-color: white;
+    }
+}
+
+.box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    background-color: rgba(196, 196, 196, 0.35);
+    height: 58px;
+    flex-basis: 58px;
+    flex-shrink: 0;
+    text-align: center;
+    text-transform: uppercase;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.headerText {
+    display: flex;
+    flex-direction: row;
+    padding: 21px;
+}
+
+.back {
+    cursor: pointer;
+    padding: 21px;
+}
+
+.formHeader {
+    display: flex;
+    flex-direction: row;
+    height: 40px;
+    flex-basis: 40px;
+    background-color: rgba(196, 196, 196, 0.17);
+    align-items: center;
+    display: flex;
+    padding-left: 21px;
+}
+
+.input {
+    border: none;
+    display: flex;
+    width: 100%;
+    margin: 0;
+    height: 40px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
+    padding: 10px 0;
+}
+
+.error {
+    text-align: center;
+    color: #ce0000;
+}
+
+.overlay {
+    position: absolute;
+    display: flex;
+    top: 92px;
+    bottom: 0;
+    background-color: rgba(55, 57, 82, 0.73);
+    left: 0;
+    right: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlayBox {
+    display: flex;
+    margin-top: -92px;
+    flex-direction: column;
+    width: 219px;
+    height: 216px;
+    background-color: #fff;
+    align-items: center;
+    justify-content: space-evenly;
+    color: #595959;
+    text-align: center;
+    font-size: 16px;
+    //transition: opacity 1s ease;
+
+    &.fade {
+        opacity: 0;
+    }
+}

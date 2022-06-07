@@ -1,0 +1,111 @@
+.container {
+    display: flex;
+    flex: 1;
+    position: relative;
+    flex-direction: column;
+    width: 100%;
+    background: linear-gradient(90deg, #383c58 0.86%, #343245 100%);
+
+    .home {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex: 1;
+    }
+
+    h4 {
+        margin: 15.5rem 15% 4rem 15%;
+        text-align: center;
+        color: rgba(255, 255, 255, 1);
+    }
+
+    .rule {
+        display: block;
+        box-sizing: border-box;
+        height: 2px;
+        width: 80%;
+        max-width: 573px;
+        border: 1px solid rgba(107, 190, 207, 1);
+    }
+
+    p {
+        max-width: 562px;
+        color: rgba(247, 247, 247, 1);
+        text-align: center;
+    }
+
+    .sections {
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+        width: 100%;
+        padding: 4rem 8.9rem;
+
+        section {
+            display: flex;
+            flex-direction: column;
+            flex-basis: 50%;
+            align-items: center;
+            padding: 16px 0px 8px;
+            background-color: rgba(65, 68, 94, 1);
+            border-radius: 1.1rem;
+
+            h6 {
+                margin: 0;
+                color: rgba(255, 255, 255, 1);
+            }
+
+            .items {
+                display: flex;
+                flex-direction: row;
+                margin-top: 1.8rem;
+                gap: 1.6rem;
+
+                figure {
+                    width: 8.5rem;
+                    margin: 0;
+
+                    img {
+                        height: 8.5rem;
+                        width: 8.5rem;
+                        object-fit: cover;
+                        object-position: center;
+                        border-radius: 0.6rem;
+                    }
+
+                    figcaption {
+                        margin-top: 0.6rem;
+                        color: rgba(255, 255, 255, 1);
+                        text-align: center;
+                    }
+                }
+            }
+
+            button {
+                margin-top: 2rem;
+            }
+        }
+    }
+
+    .copyright {
+        margin-top: auto;
+        margin-bottom: 17px;
+        color: rgba(255, 255, 255, 1);
+        font-size: 12px;
+        font-weight: 300;
+        letter-spacing: -0.42px;
+        line-height: 15px;
+        text-align: center;
+    }
+
+    .patientInfo {
+        position: fixed;
+        right: 14px;
+        bottom: 17px;
+        font-size: 16px;
+        font-weight: 300;
+        letter-spacing: 1.09px;
+        line-height: 20px;
+        color: rgba(255, 255, 255, 1);
+    }
+}

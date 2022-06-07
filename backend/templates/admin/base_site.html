@@ -1,0 +1,29 @@
+{% extends "admin/base.html" %}
+
+{% block title %}{% if subtitle %}{{ subtitle }} | {% endif %}{{ title }} | {{ENVIRONMENT|upper }} Admin{% endblock %}
+
+{% block extrastyle %}
+    {{ block.super }}
+    <style>
+        div#header {
+        {% if ENVIRONMENT == "production" %}
+            background-color: red;
+        {% elif ENVIRONMENT == "integration" %}
+            background-color: orange;
+        {% elif IS_RELEASE %}
+            background-color: green;
+        {% else %}
+            background-color: grey;
+        {% endif %}
+        }
+    </style>
+{% endblock %}
+
+{% block branding %}
+<h1 id="site-name">
+    <a href="{% url 'admin:index' %}">
+        {% if IS_RELEASE %}RELEASE Admin{% else %}{{ ENVIRONMENT|upper }} Admin{%  endif %}
+    </a></h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}

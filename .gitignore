@@ -1,0 +1,42 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/frontend/node_modules
+/jah/node_modules
+/.pnp
+.pnp.js
+
+# frontend testing
+/frontend/coverage
+
+# frontend production
+/frontend/build
+
+# misc
+.DS_Store
+/frontend/.env.local
+/frontend/.env.development.local
+/frontend/.env.test.local
+/frontend/.env.production.local
+
+/frontend/npm-debug.log*
+/frontend/yarn-debug.log*
+/frontend/yarn-error.log*
+/frontend/private
+/frontend/.vscode
+.vscode
+
+/frontend/src/supportedBrowsers.ts
+/frontend/.env
+/frontend/.expo/
+/frontend/.idea/
+.idea
+
+/test/data
+.env.development
+.env.production
+.eslintcache
+google-services.json
+/ops/terraform/edge/dev_redirect.zip
+/ops/terraform/edge/security_headers.zip
+frontend/storybook-static

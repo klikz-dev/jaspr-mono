@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# set -o errexit
+# set -o pipefail
+# set -o nounset
+
+rm -f '/app/worker.pid'
+python manage.py rqworker --pid /app/worker.pid high default low

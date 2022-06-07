@@ -1,0 +1,110 @@
+.people {
+    display: flex;
+    flex-direction: column;
+    max-width: 530px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.fieldHeaders {
+    display: flex;
+    flex-direction: row;
+    margin-left: 20px;
+    margin-right: 20px;
+    color: rgba(89, 89, 89, 1);
+    font-size: 14px;
+    letter-spacing: -0.17px;
+    line-height: 18px;
+    text-align: right;
+}
+
+.headerName {
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: 50%;
+}
+
+.headerPhone {
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: 50%;
+    text-align: right;
+    justify-content: flex-end;
+}
+
+.person {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 0;
+    margin-bottom: 10px;
+}
+
+.name {
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: 50%;
+    margin-right: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 27px;
+    border: 1px solid rgba(109, 114, 120, 1);
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    border-right: none;
+    color: rgba(74, 74, 74, 1);
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 24px;
+
+    &::placeholder {
+        color: rgba(74, 74, 74, 0.75);
+        font-weight: normal;
+    }
+}
+
+.phone {
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: 50%;
+    margin-left: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 27px;
+    padding-right: 27px;
+    border: 1px solid rgba(109, 114, 120, 1);
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    border-left: none;
+    text-align: right;
+    color: rgba(74, 74, 74, 1);
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 24px;
+
+    &::placeholder {
+        color: rgba(102, 102, 102, 1);
+        font-weight: normal;
+    }
+}
+
+.remove {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    height: 25px;
+    width: 25px;
+    margin: auto;
+    margin-left: 17px;
+    border-radius: 50%;
+    border: 1px solid rgba(109, 114, 120, 1);
+    background-color: rgb(255, 255, 255);
+}

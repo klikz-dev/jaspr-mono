@@ -1,0 +1,14 @@
+.video {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex: 1;
+}
+.poster {
+    position: absolute;
+    max-height: 100%;
+    max-width: 100%;
+    width: 100%;
+}

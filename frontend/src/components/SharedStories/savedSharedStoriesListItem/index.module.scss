@@ -1,0 +1,15 @@
+@import '../../layouts/lists/smallTileListItem.module.scss';
+
+.item {
+    composes: item;
+}
+
+.image {
+    composes: image;
+    cursor: pointer;
+}
+
+.name {
+    composes: name;
+    cursor: pointer;
+}

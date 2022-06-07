@@ -1,0 +1,40 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    width: 100%;
+    background: #eaeaea;
+}
+
+.inner {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+}
+
+.back {
+    height: 20px;
+    color: #000000;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    margin-right: auto;
+    padding: 10px;
+}
+
+.title {
+    display: flex;
+    color: #474747;
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 36px;
+    align-self: center;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding: 1rem 0.5rem 0 0.5rem;
+}

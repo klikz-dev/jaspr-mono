@@ -1,0 +1,97 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: 14px 180px 14px 215px;
+
+    h6 {
+        margin: 0;
+    }
+
+    ul {
+        li {
+            line-height: 25px;
+            letter-spacing: -0.25px;
+            font-size: 20px;
+            color: #595959;
+        }
+    }
+
+    .addButton {
+        position: relative;
+        display: flex;
+        align-self: flex-start;
+        justify-content: center;
+        align-items: center;
+        border-radius: 3px;
+        border: 1px solid #393e57;
+        height: 40px;
+        margin: 8px 10px;
+        padding: 9.5px 32.5px 9.5px 43.5px;
+        cursor: pointer;
+
+        &::before {
+            content: '+';
+            position: absolute;
+            left: 15px;
+            font-size: 36px;
+            font-weight: 200;
+        }
+    }
+
+    .customStrategies {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        .customStrategy {
+            position: relative;
+            display: flex;
+            margin: 8px 10px;
+            padding: 8px 45px 8px 15px;
+            border: 1px solid #585c72;
+            line-height: 22px;
+            border-radius: 5px;
+            background-color: #585c72;
+            text-align: center;
+            font-size: 16px;
+            font-weight: 600;
+            color: #ffffff;
+
+            span {
+                content: '✕';
+                position: absolute;
+                right: 15px;
+                top: 9px;
+                font-size: 16px;
+                font-weight: 200;
+                cursor: pointer;
+            }
+        }
+
+        .measure {
+            position: absolute;
+            visibility: hidden;
+            left: -10000px;
+            width: auto;
+            height: auto;
+            white-space: nowrap;
+            padding: 8px 16px 6px 16px; // Compare to input.  Added pixel to account for border
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .input {
+            height: 40px;
+            width: 157px;
+            margin: 8px 10px;
+            padding: 8px 15px 8px 15px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 5px;
+            border: 1px solid #585c72;
+            background-color: #585c72;
+            text-align: center;
+            color: #ffffff;
+        }
+    }
+}

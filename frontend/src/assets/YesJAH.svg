@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="22.6086957px" viewBox="0 0 20 22.6086957" version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect stroke="#80C868" stroke-width="2" x="2" y="2" width="12" height="19" rx="1"></rect>
+        <ellipse stroke="#FFFFFF" fill="#FFFFFF" transform="translate(13.333333, 10.548443) rotate(-2.000000) translate(-13.333333, -10.548443) " cx="13.3333333" cy="10.5484427" rx="3.99998192" ry="3.98517694"></ellipse>
+        <polyline stroke="#80C868" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="9.5 9.50787329 12.4773343 12 18.5 7"></polyline>
+        <circle fill="#80C868" cx="8" cy="17" r="1.5"></circle>
+    </g>
+</svg>

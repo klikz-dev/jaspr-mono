@@ -1,0 +1,15 @@
+.questions {
+    display: flex;
+    flex-direction: column;
+    > div {
+        margin-bottom: 30px;
+    }
+}
+
+.error {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 1.25px;
+    color: #e02020;
+}

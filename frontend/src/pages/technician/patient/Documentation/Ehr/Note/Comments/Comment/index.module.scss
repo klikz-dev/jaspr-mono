@@ -1,0 +1,24 @@
+.container {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(151, 151, 151, 0.5);
+    padding: 24px 29px;
+    padding-right: 100px;
+
+    .header {
+        display: flex;
+        color: #000000;
+        font-size: 16px;
+        font-weight: 600;
+        letter-spacing: 0;
+    }
+
+    .editButton {
+        position: absolute;
+        right: 24px;
+        top: 49px;
+        cursor: pointer;
+    }
+}

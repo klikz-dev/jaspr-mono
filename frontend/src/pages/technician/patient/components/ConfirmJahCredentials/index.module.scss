@@ -1,0 +1,90 @@
+.outer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    padding: 40px;
+    padding: 0 40px 27px 40px;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.header {
+    color: rgba(36, 36, 50, 1);
+    padding: 27px 40px;
+    font-size: 28px;
+    letter-spacing: 0;
+    line-height: 20px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex: 1 0 auto;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.title {
+    display: block;
+    color: rgba(36, 31, 57, 1);
+    font-size: 30px;
+    letter-spacing: 0;
+    line-height: 35px;
+    text-align: center;
+}
+
+.credentials {
+    display: flex;
+    flex-direction: column;
+    flex: 2 0 auto;
+    margin-bottom: 1rem;
+    color: rgba(36, 36, 50, 1);
+    font-size: 24px;
+    letter-spacing: 0;
+
+    .credential {
+        display: flex;
+
+        span {
+            min-width: 100px;
+        }
+    }
+}
+
+.checkbox {
+    width: 18px;
+    height: 18px;
+
+    &::placeholder {
+        color: rgba(255, 255, 255, 1);
+        opacity: 1;
+    }
+}
+
+.authorization {
+    color: rgba(36, 31, 57, 1);
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: 23px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 84px;
+    margin-right: 84px;
+    margin-bottom: 10px;
+
+    button {
+        margin: 0 1rem;
+    }
+}

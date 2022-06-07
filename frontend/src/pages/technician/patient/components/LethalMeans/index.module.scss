@@ -1,0 +1,63 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 2.4rem;
+    background-color: #ffffff;
+    border-radius: 10px;
+
+    h4 {
+        color: rgba(77, 77, 77, 1);
+        margin: 0.8rem 0;
+    }
+
+    .dataPoint {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 4rem;
+
+        .label {
+            display: flex;
+            align-items: center;
+            .circle {
+                width: 1.6rem;
+                height: 1.6rem;
+                border-radius: 50%;
+                background-color: rgba(17, 115, 131, 1);
+                margin-right: 0.8rem;
+            }
+
+            .triangle {
+                width: 0;
+                height: 0;
+                border-left: 1rem solid transparent;
+                border-right: 1rem solid transparent;
+                border-bottom: 1.8rem solid rgba(255, 154, 98, 1);
+                margin-right: 0.8rem;
+            }
+        }
+
+        .describe {
+            span {
+                &::before {
+                    content: open-quote;
+                }
+                &::after {
+                    content: close-quote;
+                }
+            }
+
+            margin-left: 2.8rem;
+            font-style: italic;
+            color: rgba(77, 77, 77, 1);
+
+            .didNotAnswer {
+                font-style: normal;
+                &::before,
+                &::after {
+                    content: '';
+                }
+            }
+        }
+    }
+}

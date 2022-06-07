@@ -1,0 +1,40 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    margin-left: 155px;
+    margin-right: 180px;
+    flex-shrink: 0;
+
+    .buttons {
+        display: flex;
+
+        &.row {
+            flex-direction: row;
+        }
+
+        &.column {
+            flex-direction: column;
+            .button {
+                &:first-child {
+                    margin-top: 56px;
+                }
+            }
+        }
+
+        &.selected {
+            margin-left: auto;
+        }
+
+        button {
+            margin: 0.5rem;
+
+            &:disabled {
+                background-color: rgba(95, 99, 114, 1) !important;
+                color: rgba(255, 255, 255, 1) !important;
+            }
+        }
+    }
+}

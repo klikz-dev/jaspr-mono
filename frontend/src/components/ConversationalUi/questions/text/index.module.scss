@@ -1,0 +1,56 @@
+.container {
+    position: relative;
+    display: flex;
+    flex-shrink: 0;
+    flex-direction: column;
+    margin: 25px 190px;
+
+    .label {
+        color: #595959;
+        font-size: 20px;
+        font-weight: 600;
+        letter-spacing: -0.25px;
+        line-height: 25px;
+    }
+
+    .measure {
+        /* Make sure properties set here match settings that effect the width of the textarea */
+        position: absolute;
+        left: -10000px;
+        width: 100%;
+        visibility: hidden;
+        line-height: 25px;
+        padding: 0 15px;
+        font-size: 20px;
+        letter-spacing: -0.25px;
+        overflow-wrap: break-word;
+        overflow: hidden;
+    }
+
+    textarea {
+        display: flex;
+        width: 100%;
+        margin-top: 14px;
+        background: none;
+        outline: none;
+        border: none;
+        border-bottom: 1px solid #979797;
+        padding: 0 15px;
+        font-size: 20px;
+        letter-spacing: -0.25px;
+        resize: none;
+    }
+}
+
+.charLimit {
+    font-size: 16px;
+    padding: 5px 15px 5px;
+
+    &.belowLimit {
+        color: orange;
+    }
+
+    &.atLimit {
+        color: red;
+    }
+}

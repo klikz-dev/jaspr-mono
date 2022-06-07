@@ -1,0 +1,83 @@
+.outer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    padding: 40px;
+    padding: 0 40px 27px 40px;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.header {
+    color: rgba(36, 36, 50, 1);
+    padding: 27px 40px;
+    font-size: 28px;
+    letter-spacing: 0;
+    line-height: 20px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex: 1 0 auto;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.close {
+    position: absolute;
+    top: 13px;
+    right: 22px;
+    font-size: 34px;
+    color: rgba(36, 36, 50, 1);
+    cursor: pointer;
+    user-select: none;
+}
+
+.label {
+    width: 31%;
+    display: flex;
+    flex-direction: column;
+    color: rgba(36, 36, 50, 1);
+    justify-content: flex-end;
+}
+
+.formLabel {
+    color: rgba(36, 36, 50, 1);
+    font-size: 20px;
+    letter-spacing: 0;
+}
+
+.value {
+    color: rgba(36, 35, 51, 1);
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 0;
+}
+
+.buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 10px;
+
+    .edit {
+        margin-right: 60px;
+        color: rgba(23, 155, 176, 1);
+        font-size: 18px;
+        font-weight: 600;
+        letter-spacing: 0;
+        cursor: pointer;
+    }
+
+    button {
+        margin: 0 1rem;
+    }
+}

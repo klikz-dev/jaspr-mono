@@ -1,0 +1,17 @@
+.listItem {
+    margin-left: 21px;
+    margin-right: 21px;
+    margin-top: 7.5px;
+    margin-bottom: 7.5px;
+    border-radius: 10px;
+    background-color: #41476a;
+    height: 70px;
+    justify-content: center;
+}
+
+.listItemText {
+    padding: 14px;
+    color: #fffefe;
+    font-size: 20px;
+    font-weight: 500;
+}

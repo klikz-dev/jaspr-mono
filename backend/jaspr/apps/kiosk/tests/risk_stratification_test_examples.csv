@@ -1,0 +1,14 @@
+test patient #,wish_live,wish_die ,suicidal_yes_no,intent_yes_no,plan_yes_no,suicide_risk,hospitalized_yes_no,abuse_yes_no,rate_agitation,frustration0,current_yes_no,Score (0-6),Current Attempt,Suicide Plan and Intent,Risk (low/mod/high),suicide_index_score,suicide_index_score_typology
+1,3,7,yes,yes,yes,4,yes,yes,4,8,yes,6,Current Attempt,Suicide Plan and Intent,High,-1,Wish to Die
+2,6,2,no,no,no,2,no,no,2,5,no,0,No Current Attempt,No Suicide Plan or Intent,Low,2,Wish to Live
+3,5,2,yes,no,yes,1,no,yes,5,9,no,3,No Current Attempt,Suicide Plan or Intent,Moderate,1,Wish to Live
+4,4,3,-,no,yes,5,no,no,5,3,yes,-,Current Attempt,Suicide Plan and Intent,-,0,Ambivalent
+5,4,4,no,yes,yes,3,yes,no,-,6,no,3,No Current Attempt,Suicide Plan and Intent,High,0,Ambivalent
+6,7,2,no,no,no,2,no,yes,3,6,no,1,No Current Attempt,No Suicide Plan or Intent,Low,2,Wish to Live
+7,6,3,yes,yes,no,3,no,no,3,7,yes,2,Current Attempt,Suicide Plan or Intent,High,1,Wish to Live
+8,2,4,yes,no,yes,4,yes,no,4,6,yes,4,Current Attempt,Suicide Plan and Intent,High,-1,Wish to Die
+9,2,6,yes,yes,no,4,yes,yes,5,7,no,5,No Current Attempt,Suicide Plan or Intent,High,-2,Wish to Die
+10,3,4,yes,no,no,3,no,yes,4,8,no,3,No Current Attempt,Suicide Plan or Intent,Moderate,0,Ambivalent
+11,2,6,yes,yes,yes,-,yes,no,4,9,yes,-,Current Attempt,-,-,-2,Wish to Die
+12,3,3,yes,no,no,3,no,-,3,8,-,-,-,Suicide Plan or Intent,-,0,Ambivalent
+13,-,6,yes,-,-,-,yes,-,4,8,-,-,-,-,-,-,-

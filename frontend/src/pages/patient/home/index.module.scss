@@ -1,0 +1,74 @@
+.container {
+    display: flex;
+    flex: 1;
+    position: relative;
+    flex-direction: row;
+    width: 100%;
+}
+
+.home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+.header {
+    display: block;
+    margin: 71px 0 11px;
+    color: rgba(247, 247, 247, 1);
+    font-size: 68px;
+    font-weight: 300;
+    letter-spacing: -0.8px;
+    line-height: 74px;
+    text-align: center;
+}
+
+.rule {
+    display: block;
+    box-sizing: border-box;
+    height: 2px;
+    width: 80%;
+    max-width: 573px;
+    border: 1px solid rgba(107, 190, 207, 1);
+}
+
+.description {
+    display: block;
+    max-width: 562px;
+    color: rgba(247, 247, 247, 1);
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 32px;
+    text-align: center;
+}
+
+.copyright {
+    margin-bottom: 17px;
+    margin-right: 56px; /* Half of nav bar width */
+    color: rgba(255, 255, 255, 1);
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: -0.42px;
+    line-height: 15px;
+    text-align: center;
+}
+
+.patientInfo {
+    position: fixed;
+    right: 14px;
+    bottom: 17px;
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 1.09px;
+    line-height: 20px;
+    color: rgba(255, 255, 255, 1);
+}
+
+.bookmarks {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 100px;
+}

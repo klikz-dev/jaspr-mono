@@ -1,0 +1,373 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    height: 100%;
+    page-break-after: always;
+    background-color: #ffffff;
+
+    @media print {
+        height: auto;
+    }
+}
+
+.area {
+    flex-grow: 1;
+    padding-left: 3.25rem;
+    padding-right: 3.25rem;
+    background-color: #eceef5;
+    font-family: 'Source Sans Pro';
+
+    @media print {
+        //padding: 0 !important;
+        padding: 0;
+        overflow-y: initial;
+    }
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media print {
+        display: none;
+    }
+}
+
+.back {
+    color: #68bbd0;
+    flex: 1;
+    font-size: 1rem;
+    line-height: 1rem;
+    position: relative;
+    cursor: pointer;
+
+    &:before {
+        position: absolute;
+        right: 100%;
+        top: 0.31rem;
+        padding-right: 1rem;
+        content: '\3008';
+        font-size: 0.5rem;
+        line-height: 0.5rem;
+        font-weight: bold;
+    }
+}
+
+.backPlaceholder {
+    composes: back;
+    visibility: hidden;
+}
+
+.title {
+    flex: 4;
+    font-size: 32px;
+    text-align: center;
+    color: #000000;
+    font-weight: 300;
+}
+
+.backPlaceholder {
+    flex: 1;
+}
+
+.summary {
+    background-color: #ffffff;
+    //box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+    padding-bottom: 1.5rem;
+    margin-bottom: 3.25rem;
+}
+
+.divider {
+    height: 1px;
+    border: 1px solid #979797;
+    opacity: 0.4;
+    margin-bottom: 1.5rem;
+
+    @media print {
+        margin-bottom: 0.2rem;
+    }
+}
+
+.pageBreak {
+    @media print {
+        page-break-before: always;
+    }
+}
+
+.sectionTitle {
+    background-color: #fafafa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+    margin-bottom: 1rem;
+    font-size: 24px;
+
+    @media print {
+        padding: 1rem;
+    }
+}
+
+.ratingTable {
+    display: flex;
+    flex-direction: column;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    margin-bottom: 1.5rem;
+
+    @media print {
+        margin-bottom: 0.5rem;
+    }
+
+    > div:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.ratingTableRow {
+    display: flex;
+    justify-content: baseline;
+    align-items: center;
+    margin-bottom: 1.5rem;
+
+    @media print {
+        margin-bottom: 0.5rem;
+    }
+
+    > div:nth-child(1) {
+        flex: 2;
+        text-align: center;
+    }
+    > div:nth-child(2) {
+        flex: 5;
+    }
+    > div:nth-child(3) {
+        flex: 8;
+    }
+    > div:nth-child(4) {
+        flex: 2;
+        text-align: center;
+    }
+    > div:nth-child(5) {
+        flex: 1;
+        text-align: center;
+    }
+}
+
+.tableLabel {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.tableLabelMedium {
+    composes: tableLabel;
+}
+
+.item {
+    font-size: 18px;
+}
+
+.boldItem {
+    composes: item;
+    font-weight: bold;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+}
+
+.italicsItem {
+    composes: item;
+    font-style: italic;
+}
+
+.italicsItemQuotes {
+    composes: italicsItem;
+    &:not(:empty) {
+        &:before {
+            content: open-quote;
+        }
+        &:after {
+            content: close-quote;
+        }
+    }
+}
+
+.tableRegularItem {
+    font-size: 2px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+
+    .indentItem {
+        width: 50%;
+    }
+}
+
+.indentItem {
+    display: flex;
+    flex-direction: column;
+    padding-left: 2rem;
+}
+
+.emptyItem {
+    composes: item;
+    min-width: 1px;
+    min-height: 1px;
+    visibility: hidden;
+}
+
+.columnFiller {
+    content: ' ';
+    visibility: hidden;
+    min-width: 1px;
+    min-height: 1px;
+}
+
+.ratingBlock {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+
+    @media print {
+        margin-bottom: 0.2rem;
+    }
+
+    > div:nth-child(1) {
+        flex: 1;
+    }
+    > div:nth-child(2) {
+        flex: 14;
+    }
+    > div:nth-child(3) {
+        flex: 2;
+        text-align: center;
+    }
+    > div:nth-child(4) {
+        flex: 1;
+        text-align: center;
+    }
+}
+
+.reasonsAnswer {
+    composes: italicsItemQuotes;
+    //box-shadow: inset 0 -1px 0 0 #33a5bd;
+    //text-align: left !important;
+    text-align: left;
+    padding: 0.25rem;
+}
+
+.reasonsTable {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.reasonsTableRow {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    margin-bottom: 1rem;
+
+    @media print {
+        margin-bottom: 0.3rem;
+    }
+    > div:nth-child(1) {
+        flex: 2;
+        text-align: center;
+    }
+    > div:nth-child(2) {
+        flex: 6.5;
+        text-align: center;
+    }
+    > div:nth-child(3) {
+        flex: 1;
+        text-align: center;
+    }
+    > div:nth-child(4) {
+        flex: 2;
+        text-align: center;
+    }
+    > div:nth-child(5) {
+        flex: 6.5;
+        text-align: center;
+    }
+    > div:nth-child(6) {
+        flex: 1;
+        text-align: center;
+    }
+}
+
+.inlineDescriptionBlock {
+    display: flex;
+    margin-bottom: 1.5rem;
+
+    @media print {
+        margin-bottom: 0.5rem;
+    }
+
+    > div:nth-child(1) {
+        flex: 1;
+    }
+    > div:nth-child(2) {
+        flex: 7.5;
+    }
+    > div:nth-child(3) {
+        flex: 1;
+    }
+    > div:nth-child(4) {
+        flex: 7.5;
+    }
+    > div:nth-child(5) {
+        flex: 1;
+    }
+}
+
+.riskBlock {
+    display: flex;
+    margin-bottom: 1rem;
+
+    @media print {
+        margin-bottom: 0.1rem;
+    }
+
+    > div:nth-child(1) {
+        flex: 1;
+    }
+    > div:nth-child(2) {
+        flex: 11;
+
+        > div:first-child {
+            margin-bottom: 0.5rem;
+        }
+    }
+    > div:nth-child(3) {
+        flex: 1;
+    }
+    > div:nth-child(4) {
+        flex: 3;
+        text-align: right;
+    }
+    > div:nth-child(5) {
+        flex: 1;
+    }
+    > div:nth-child(6) {
+        flex: 1;
+    }
+}
+
+.riskDescriptionBlock {
+    composes: riskBlock;
+    > div:nth-child(2) {
+        > div:first-child {
+            margin-bottom: 0.5rem;
+            @media print {
+                margin-bottom: 0rem;
+            }
+        }
+    }
+}

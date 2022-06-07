@@ -1,0 +1,37 @@
+.text {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 25px;
+    text-align: center;
+    letter-spacing: 1.25px;
+
+    color: #000000;
+}
+
+.buttons {
+    display: flex;
+    width: 100%;
+    margin-top: 25px;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.button {
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: 50%;
+    margin: 5px;
+    padding: 8px;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(109, 198, 210, 1);
+    border-radius: 4px;
+    color: rgba(255, 255, 255, 1);
+}
+
+.discard {
+    background-color: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(74, 74, 74, 1);
+    color: rgba(74, 74, 74, 1);
+}

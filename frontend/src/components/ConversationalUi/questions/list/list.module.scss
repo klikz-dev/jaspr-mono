@@ -1,0 +1,31 @@
+.instruction {
+    margin-bottom: 30px;
+    align-self: center;
+    color: rgba(47, 52, 79, 1);
+    font-size: 22px;
+    letter-spacing: -0.27px;
+    line-height: 26px;
+    padding: 0 30px;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+
+    input {
+        display: flex;
+        margin: 4px 20px;
+        height: 40px;
+        background-color: rgba(255, 255, 255, 1);
+        border: none;
+        border-bottom: 1px solid #33a5bd;
+        border-radius: 0;
+        padding: 10px;
+        font-family: 'Source Sans Pro';
+        font-size: 16px;
+    }
+}
+
+input:focus {
+    outline: none;
+}

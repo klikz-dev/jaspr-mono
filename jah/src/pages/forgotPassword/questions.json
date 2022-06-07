@@ -1,0 +1,90 @@
+[
+    {
+        "uid": "",
+        "guide": ["Let me help you reset your password"],
+        "actions": [
+            {
+                "type": "buttons",
+                "buttons": [{ "label": "Okay" }]
+            }
+        ]
+    },
+    {
+        "uid": "",
+        "guide": ["First, I'll need your email and your phone number."],
+        "actions": [
+            {
+                "type": "activate-account"
+            },
+            {
+                "type": "buttons",
+                "validation": true,
+                "buttons": [{ "label": "Next" }]
+            }
+        ]
+    },
+    {
+        "uid": "",
+        "guide": [
+            "If we have a record of your account, you should get an activation code sent to the phone number you entered."
+        ],
+        "actions": [
+            {
+                "type": "activation-code"
+            },
+            {
+                "type": "buttons",
+                "validation": true,
+                "buttons": [{ "label": "Next" }]
+            },
+            {
+                "type": "info-modal",
+                "title": "Didn’t receive an activation code?",
+                "content": [
+                    {
+                        "header": "Are you new to Jaspr? ",
+                        "body": "At this time Jaspr at Home mobile accounts are only available to people who have been oriented to Jaspr by a medical provider."
+                    },
+                    {
+                        "header": "Do you already have a password?",
+                        "body": "If you’ve already set up your account and have a password, you won’t get an activation code. Try logging in from the main login screen."
+                    },
+                    {
+                        "header": "Forgot your password?",
+                        "body": "You can recover your forgotten password from the main login screen."
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "uid": "",
+        "guide": ["Next, set a password."],
+        "actions": [
+            {
+                "type": "set-password"
+            },
+            {
+                "type": "buttons",
+                "validation": true,
+                "buttons": [{ "label": "Next" }]
+            }
+        ]
+    },
+    {
+        "uid": "",
+        "guide": ["All done! Your password has changed and you are logged into the app."],
+        "actions": [
+            {
+                "type": "buttons",
+                "buttons": [
+                    {
+                        "label": "Done",
+                        "action": "navigate",
+                        "path": "/"
+                    }
+                ]
+            }
+        ]
+    }
+]

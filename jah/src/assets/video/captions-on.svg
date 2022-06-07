@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="20px" viewBox="0 0 30 20" version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>cc_toggled</title>
+    <g id="Video-Layouts" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="cc_toggled" transform="translate(1.000000, 1.000000)">
+            <rect id="Rectangle" stroke="#6DC6D2" stroke-width="1.5" fill="#6DC6D2" stroke-linejoin="round" x="0" y="0" width="28" height="18" rx="5"></rect>
+            <text id="CC" font-size="11" font-weight="bold" letter-spacing="0.0825" fill="#FFFFFF">
+                <tspan x="6.08107422" y="13">CC</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

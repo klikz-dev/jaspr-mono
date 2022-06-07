@@ -1,0 +1,48 @@
+.note {
+    display: flex;
+    flex-direction: column;
+    padding: 23px 0;
+
+    &:first-child {
+        border-bottom: 1px solid rgba(216, 216, 216, 1);
+    }
+
+    .controls {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        .metadata {
+            display: flex;
+            flex-direction: column;
+            margin-left: 2rem;
+
+            &.active {
+                cursor: pointer;
+            }
+
+            &.inactive {
+                cursor: default;
+                color: rgba(127, 127, 127, 1);
+            }
+        }
+
+        .arrow {
+            margin-left: auto;
+            cursor: pointer;
+        }
+    }
+
+    .fulltext {
+        padding: 0 45px;
+        line-height: 1.2;
+        white-space: pre-wrap;
+        font-family: 'Courier New', Courier, monospace;
+        transition: max-height 0.5s ease, padding 0.5s ease;
+        overflow: hidden;
+
+        &.open {
+            padding: 10px 45px;
+        }
+    }
+}

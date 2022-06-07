@@ -1,0 +1,41 @@
+.container {
+    display: flex;
+    width: 100%;
+    background-color: #eceef5;
+
+    .footer {
+        position: fixed;
+        bottom: 0;
+        height: 75px;
+        width: 100%;
+        background: linear-gradient(
+            to top,
+            rgba(236, 238, 245, 1) 60%,
+            rgba(236, 238, 245, 0.5) 100%
+        );
+
+        .back {
+            position: fixed;
+            bottom: 37px;
+            left: 22px;
+            font-size: 20px;
+            line-height: 20px;
+            letter-spacing: 0.48px;
+            text-align: center;
+            cursor: pointer;
+            font-weight: 300;
+        }
+
+        .patientInfo {
+            position: fixed;
+            bottom: 37px;
+            right: 22px;
+            font-size: 20px;
+            line-height: 20px;
+            letter-spacing: 0.48px;
+            text-align: center;
+            cursor: pointer;
+            font-weight: 300;
+        }
+    }
+}

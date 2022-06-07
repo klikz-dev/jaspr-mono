@@ -1,0 +1,83 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    flex-grow: 1;
+    height: 100%;
+
+    @media only screen and (min-width: 1024px) {
+        flex-direction: row;
+        background-color: white;
+    }
+}
+
+.box {
+    width: 100%;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(196, 196, 196, 0.35);
+    height: 58px;
+    flex-basis: 58px;
+    flex-shrink: 0;
+}
+.headerText {
+    font-size: 15px;
+    text-align: center;
+    text-transform: uppercase;
+}
+.email {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 58px;
+    flex-basis: 58px;
+    flex-shrink: 0;
+}
+
+.emailColumn {
+    display: flex;
+    flex-direction: row;
+    padding: 21px;
+
+    &:first-child {
+        font-weight: bold;
+    }
+}
+
+.navButton,
+.navLink {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 66px;
+    flex-basis: 66px;
+    flex-shrink: 0;
+    border-top-width: 1px;
+    border-top-color: #eaeaea;
+    border-bottom-width: 1px;
+    border-bottom-color: #eaeaea;
+}
+
+.navButtonColumn {
+    display: flex;
+    flex-direction: row;
+    padding: 21px;
+}
+
+.navLink {
+    &:link {
+        text-decoration: none;
+        color: inherit;
+    }
+    &:visited {
+        text-decoration: none;
+        color: inherit;
+    }
+}

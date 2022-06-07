@@ -1,0 +1,130 @@
+.container {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    background-color: #f6f6f6;
+
+    .controls {
+        display: flex;
+        flex-shrink: 0;
+        width: 95%;
+        max-width: 1000px; /* Changes here need to be reflected in new patient modal */
+        align-items: center;
+        margin-top: 12px;
+        margin-bottom: 20px;
+
+        .search {
+            position: relative;
+            margin-left: 40px;
+            &:before {
+                content: '';
+                position: absolute;
+                display: block;
+                top: 15px;
+                left: 18px;
+                height: 23px;
+                width: 23px;
+                background-image: url('../../../assets/search.svg');
+                background-size: 23px 23px;
+                z-index: 1;
+            }
+            input {
+                position: relative;
+                height: 54px;
+                width: 269px;
+                border-radius: 13px;
+                background-color: rgba(255, 255, 255, 1);
+                border: none;
+                color: rgb(80, 80, 80);
+                font-size: 20px;
+                padding: 16px;
+                padding-left: 54px;
+                -webkit-appearance: none;
+
+                &[type='search']::-webkit-search-cancel-button {
+                    -webkit-appearance: none;
+                    position: relative;
+                    display: block;
+                    height: 20px;
+                    width: 20px;
+                    border-radius: 10px;
+                    background-image: url('../../../assets/search-clear.svg');
+                }
+            }
+        }
+
+        .addNew {
+            margin-right: 55px;
+        }
+    }
+
+    .searchStats {
+        color: #000000;
+        font-size: 28px;
+        font-weight: bold;
+        letter-spacing: 0;
+        line-height: 36px;
+        text-align: center;
+        margin-bottom: 30px;
+
+        .displayedSearchValue {
+            &::before {
+                content: open-quote;
+            }
+            &::after {
+                content: close-quote;
+            }
+        }
+    }
+
+    .patientList {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        overflow-y: auto;
+        width: 95%;
+        max-width: 1000px;
+    }
+}
+
+_:-ms-fullscreen,
+:root .patientList {
+    overflow-y: scroll;
+}
+
+.logo {
+    width: 56px;
+    height: 56px;
+}
+
+.error {
+    color: rgba(255, 0, 0, 1);
+    font-size: 17px;
+    line-height: 24px;
+    text-align: center;
+
+    &:empty {
+        display: none;
+    }
+}
+
+.buttons {
+    display: flex;
+    width: 320px;
+    justify-content: space-around;
+}
+
+.cancel {
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 1);
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0;
+}

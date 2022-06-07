@@ -1,0 +1,49 @@
+.column {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+}
+
+.p {
+    color: rgba(116, 116, 116, 1);
+    font-size: 22px;
+    letter-spacing: -0.27px;
+    line-height: 26px;
+}
+
+.header {
+    display: flex;
+    margin-top: 50px;
+    margin-bottom: -50px;
+}
+
+.headerText {
+    color: rgba(0, 0, 0, 1);
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 36px;
+    text-align: center;
+}
+
+.guideProfile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.guideImage {
+    height: 64px;
+    width: 64px;
+    border-radius: 32px;
+}
+
+.guideName {
+    margin-left: 15px;
+    color: #000000;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: -0.2px;
+}

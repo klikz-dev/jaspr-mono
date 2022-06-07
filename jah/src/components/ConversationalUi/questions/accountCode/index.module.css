@@ -1,0 +1,39 @@
+.container {
+    display: flex;
+    width: 366px;
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: column;
+}
+
+.instruction {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    letter-spacing: -0.25px;
+    color: #d0021b;
+}
+
+.label {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+.cell {
+    display: flex;
+    height: 54px;
+    width: 42px;
+    border-width: 1px;
+    border-color: #979797;
+    border-radius: 4px;
+    background-color: #ffffff;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 24px;
+    text-align: center;
+}
+
+.focusCell {
+    border-color: #000000;
+}

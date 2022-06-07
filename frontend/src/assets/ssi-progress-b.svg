@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="34px" height="34px" viewBox="0 0 34 34" version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <circle stroke="#DADADA" stroke-width="7" cx="17" cy="17" r="13"></circle>
+        <path d="M33.0715491,8.61169224 C31.2422022,7.62900588 29.1504271,7.07154908 26.9284509,7.07154908 C21.9840142,7.07154908 17.6842946,9.83191137 15.486271,13.8956571 C14.4925956,15.7327821 13.9284509,17.8362841 13.9284509,20.0715491" stroke="#6CC5D4" stroke-width="7" transform="translate(23.500000, 13.571549) rotate(-270.000000) translate(-23.500000, -13.571549) "></path>
+        <rect fill="#FFFFFF" x="16" y="0" width="2" height="11"></rect>
+        <rect fill="#FFFFFF" transform="translate(29.000000, 24.000000) rotate(-240.000000) translate(-29.000000, -24.000000) " x="28" y="18.5" width="2" height="11"></rect>
+        <rect fill="#FFFFFF" transform="translate(5.000000, 24.000000) rotate(-300.000000) translate(-5.000000, -24.000000) " x="4" y="18.5" width="2" height="11"></rect>
+    </g>
+</svg>

@@ -1,0 +1,28 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    flex-grow: 1;
+    justify-content: center;
+    background-color: rgba(236, 238, 245, 1);
+}
+
+.button {
+    display: flex;
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 55px;
+    width: 162px;
+    border-radius: 17px;
+    background-color: rgba(92, 101, 151, 1);
+}
+
+.buttonText {
+    margin: auto;
+    color: rgba(255, 255, 255, 1);
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: 0.17px;
+    text-align: center;
+}

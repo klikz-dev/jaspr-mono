@@ -1,0 +1,76 @@
+[
+  {
+    "model": "auth.group",
+    "pk": 1,
+    "fields": {
+      "name": "Technician",
+      "permissions": []
+    }
+  },
+  {
+    "model": "auth.group",
+    "pk": 2,
+    "fields": {
+      "name": "Patient",
+      "permissions": []
+    }
+  },
+  {
+    "model": "accounts.user",
+    "pk": 1,
+    "fields": {
+      "password": "argon2$argon2id$v=19$m=102400,t=2,p=8$Y05MWVhFaUJpYXFhdk9Hc1dLc29DMg$t4xEXL+ys+Fjmo+h4V0G9Qzbuj6V5WEJuo8CM4rmzYI",
+      "last_login": "2022-04-12T15:15:58.431Z",
+      "is_superuser": true,
+      "email": "dev@jasprhealth.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2020-04-30T01:08:50.802Z",
+      "password_changed": "2020-04-30T01:08:50.802Z",
+      "account_locked_at": null,
+      "password_complex": false,
+      "mobile_phone": "",
+      "preferred_message_type": "email",
+      "current_security_chars": "XDRNdixTxzrMtG1V5c9vmpDodX6hPbP2P4albYKNscFszB3Beix4lfEq49iurQ2dz1FwecDeWWTKqJTLmQjCrYzIEsofUohhLTYw",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "otp_totp.totpdevice",
+    "pk": 1,
+    "fields": {
+      "user": 1,
+      "name": "Emma IDK",
+      "confirmed": true,
+      "throttling_failure_timestamp": null,
+      "throttling_failure_count": 0,
+      "key": "199c341176cc24d1ecdaacd0d8e216d54f1e0027",
+      "step": 30,
+      "t0": 0,
+      "digits": 6,
+      "tolerance": 1,
+      "drift": 0,
+      "last_t": 53163831
+    }
+  },
+  {
+    "model": "otp_static.staticdevice",
+    "pk": 1,
+    "fields": {
+      "user": 1,
+      "name": "Backup Code",
+      "confirmed": true,
+      "throttling_failure_timestamp": null,
+      "throttling_failure_count": 0
+    }
+  },
+  {
+    "model": "otp_static.statictoken",
+    "pk": 1,
+    "fields": {
+      "device": 1,
+      "token": "emma-jaspr-token"
+    }
+  }
+]

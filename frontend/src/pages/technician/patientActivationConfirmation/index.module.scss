@@ -1,0 +1,30 @@
+.outer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    color: rgba(255, 255, 255, 1);
+    font-size: 28px;
+    line-height: 20px;
+    margin-top: 10px;
+}
+
+.confirmationTable {
+    width: 600px;
+    padding: 40px;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    color: rgba(255, 255, 255, 1);
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+
+    button {
+        margin: 0 1rem;
+    }
+}

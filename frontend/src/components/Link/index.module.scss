@@ -1,0 +1,22 @@
+.link,
+.link:visited {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 16px;
+    height: 44px;
+    font-weight: 600;
+    font-size: 1.6rem;
+    line-height: 100%;
+    text-align: center;
+    letter-spacing: 0.02em;
+    border-radius: 10px;
+    color: rgba(17, 115, 131, 1);
+    background-color: rgba(255, 255, 255, 0);
+    transition: background-color 300ms ease-out, color 300ms ease-out;
+
+    &:hover {
+        background-color: rgba(17, 115, 131, 0.05);
+    }
+}

@@ -1,0 +1,31 @@
+#!/bin/bash
+
+#set -o errexit
+#set -euxo pipefail
+#set -o nounset
+
+cd /app || exit
+
+echo "Collect static files for django"
+python manage.py collectstatic --clear --noinput # clearstatic files
+python manage.py collectstatic --noinput  # collect static files
+
+echo "Checking for internet access..."
+
+TEST_URL="https://www.google.com/"
+HTTP_STATUS=$(curl -o /dev/null -s -w "%{http_code}\n" "${TEST_URL}")
+echo "Response | HTTP_STATUS: ${HTTP_STATUS}"
+
+echo "Starting gunicorn & nginx..."
+
+exec /usr/local/bin/gunicorn jaspr.wsgi \
+--name jaspr_api_server \
+--bind 0.0.0.0:5000 \
+--chdir=/app \
+--log-file=- \
+--access-logfile=- \
+--log-level=debug \
+--worker-tmp-dir /dev/shm \
+--workers=2 \
+--threads=4 \
+--worker-class=gthread

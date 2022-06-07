@@ -1,0 +1,117 @@
+$oneThirdPercentage: (100 / 3) * 1%;
+
+.popup {
+    position: fixed;
+    bottom: 0;
+    height: 65vh;
+    margin: 0 36px 0 36px;
+    padding: 40px 31px;
+    border-radius: 24px 24px 0 0;
+    background-color: #ffffff;
+    z-index: 2;
+}
+
+.top {
+    display: flex;
+    margin-bottom: 29px;
+}
+
+.topSpacer {
+    flex: 1;
+}
+
+.title {
+    flex: 8;
+    /* The `display: flex` works with the `&::before` element that's why we do it. */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000000;
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 36px;
+    text-align: center;
+    margin: 0;
+
+    &::before {
+        content: '';
+        display: inline-block;
+        width: 29px;
+        height: 32px;
+        margin-right: 12px;
+        background-size: 29px 32px;
+        background-image: url('../../../../assets/summaries.png');
+    }
+}
+
+.crossedPlus {
+    flex: 1;
+    //flex: 1 !important;
+    color: transparent !important;
+    background: transparent !important;
+    color: transparent;
+    background: transparent;
+
+    span {
+        color: #979797 !important;
+    }
+}
+
+.tiles {
+    display: flex;
+    justify-content: center;
+}
+
+.tile {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: calc(#{$oneThirdPercentage} - 20px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 46px 29px;
+    border-radius: 12px;
+    margin: 0 20px 0 0;
+    background-color: rgba(47, 52, 79, 1);
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.tileTitle {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 31px;
+    text-align: center;
+    margin: 0 0 12px 0;
+}
+
+.tileDescription {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    text-align: center;
+    margin: 0 0 27px 0;
+}
+
+.modalTitle {
+    text-align: center;
+    margin-bottom: auto;
+    position: absolute;
+    top: 39px;
+    width: 100%;
+    left: 0;
+    font-size: 32px;
+    font-weight: 300;
+}
+
+.back {
+    position: absolute;
+    top: 46px;
+    font-size: 22px;
+    left: 46px;
+    cursor: pointer;
+}

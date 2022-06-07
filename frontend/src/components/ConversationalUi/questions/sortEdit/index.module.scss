@@ -1,0 +1,139 @@
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    height: 390px;
+    width: 455px;
+    border: 1.5px solid #979797;
+    background-color: #ffffff;
+
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 59px;
+        background-color: rgba(73, 85, 133, 0.23);
+        border-bottom: 1px solid #979797;
+        text-align: center;
+        text-transform: uppercase;
+        color: #000000;
+        font-size: 27px;
+        letter-spacing: -0.34px;
+        line-height: 34px;
+    }
+
+    .editor {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        top: 130px;
+        left: -78px;
+        height: 67px;
+        width: 626px;
+        border: 1px solid #979797;
+        background-color: #ffffff;
+        z-index: 1;
+
+        input {
+            border: none;
+            outline: none;
+            height: 100%;
+            flex-grow: 1;
+            padding-left: 1rem;
+            margin-right: 30px;
+            letter-spacing: -0.3px;
+            font-size: 24px;
+        }
+
+        .trash {
+            display: flex;
+            width: 22px;
+            height: 25px;
+            margin-left: auto;
+            margin-right: 47px;
+            cursor: pointer;
+            background: url('../../../../assets/trashcan.png');
+            background-size: 22px 25px;
+        }
+
+        .done {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: auto;
+            font-size: 18px;
+            font-weight: 600;
+            padding: 6px 12px;
+            color: #fff;
+            background-color: #33a5bd;
+            border-radius: 6px;
+            margin-right: 20px;
+        }
+    }
+
+    .sortableContainer {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .add {
+        position: relative;
+        display: flex;
+        align-self: center;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid #393e57;
+        border-radius: 3px;
+        height: 40px;
+        margin: 8px 0;
+        padding: 9.5px 32.5px 9.5px 43.5px;
+        cursor: pointer;
+
+        &::before {
+            content: '+';
+            position: absolute;
+            left: 15px;
+            font-size: 36px;
+            font-weight: 200;
+        }
+    }
+}
+
+.reason {
+    display: flex;
+    height: 20%;
+    border-bottom: 1px solid #979797;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+
+    .drag {
+        display: flex;
+        background: url('../../../../assets/greyHamburger.png') no-repeat;
+        background-size: 19px 17px;
+        height: 19px;
+        width: 17px;
+        margin-right: 1rem;
+    }
+
+    .content {
+        display: flex;
+        flex-grow: 1;
+        color: #000000;
+        font-size: 24px;
+        letter-spacing: -0.3px;
+    }
+
+    .edit {
+        display: flex;
+        background: url('../../../../assets/pencil.png') no-repeat center;
+        background-size: 18px 18px;
+        height: 36px;
+        width: 36px;
+        border-radius: 50%;
+        background-color: rgba(51, 165, 189, 0.17);
+        cursor: pointer;
+    }
+}

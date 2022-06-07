@@ -1,0 +1,47 @@
+.container {
+    display: flex;
+    width: 100%;
+    background: #e5e5e5;
+    flex-direction: column;
+    background: #fff;
+}
+
+.tabs {
+    display: flex;
+    height: 68px;
+    flex-direction: row;
+    flex-shrink: 0;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    border-top-width: 1px;
+    border-top-color: #000000;
+}
+
+.tab {
+    flex: 1;
+    flex-basis: 50%;
+    justify-content: center;
+    height: 68px;
+    padding: 1rem;
+    color: #000000;
+    background: rgba(196, 196, 196, 0.35);
+}
+
+.tabText {
+    text-align: center;
+    font-size: 16px;
+    letter-spacing: 0.9375px;
+    text-transform: uppercase;
+    color: #000;
+}
+
+.activeTab {
+    background: #fff;
+}
+
+.carousel {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}

@@ -1,0 +1,86 @@
+.scaleContainer {
+    padding: 10px;
+}
+.instruction {
+    margin-bottom: 30px;
+    padding: 0 30px;
+    align-self: center;
+    color: rgba(47, 52, 79, 1);
+    font-size: 22px;
+    letter-spacing: -0.27px;
+    line-height: 26px;
+}
+
+.scalebar {
+    display: flex;
+    margin: 10px 90px 56px 90px;
+    justify-content: space-around;
+    position: relative;
+
+    label {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .rule {
+        display: flex;
+        flex-grow: 1;
+        align-self: flex-start;
+        margin-top: 9px;
+        border-bottom: 2px solid rgba(225, 225, 225, 1);
+        &:last-child {
+            display: none;
+        }
+    }
+
+    input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+
+        &:checked {
+            & ~ .checkmark {
+                background-color: #33a5bd;
+            }
+        }
+    }
+
+    .checkmark {
+        display: flex;
+        height: 20px;
+        width: 20px;
+        margin-bottom: 30px;
+        background-color: #fff;
+        border-color: rgba(151, 151, 151, 1);
+        border-width: 3px;
+        border-style: solid;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    .value {
+        display: flex;
+        color: rgba(74, 74, 74, 1);
+        font-size: 20px;
+        font-weight: 600;
+        letter-spacing: 2.39px;
+        line-height: 25px;
+    }
+
+    .leastImportant,
+    .mostImportant {
+        display: block;
+        position: absolute;
+        top: 85px;
+        width: 95px;
+        text-align: center;
+        user-select: none;
+        pointer-events: none;
+        cursor: auto;
+    }
+}

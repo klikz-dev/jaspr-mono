@@ -1,0 +1,93 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.video {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    width: 100%;
+    flex-grow: 0;
+}
+
+.videoWeb {
+    @extend .video;
+    width: 100vw;
+    height: 56.25vw;
+    max-height: 100vh;
+    max-width: 177.78vh;
+}
+
+.poster {
+    position: absolute;
+    max-height: 100%;
+    max-width: 100%;
+    width: 100%;
+}
+video {
+    position: absolute;
+    width: 100%;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.controls {
+    display: flex;
+    flex-direction: row;
+    flex-basis: 97px;
+    flex-shrink: 1;
+    min-height: 50px;
+    max-height: 97px;
+    justify-content: space-between;
+    margin: 0 24px;
+    align-items: center;
+    color: #ffffff;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+
+    @media only screen and (min-width: 1024px) {
+        font-size: 21px;
+        margin: 0 48px;
+    }
+}
+
+.title {
+    flex-grow: 1;
+    text-align: center;
+    padding: 0 20px;
+    font-weight: 300;
+    font-size: 18px;
+    @media only screen and (min-width: 1024px) {
+        font-size: 32px;
+    }
+}
+
+.saveForLater,
+.removeFromPlan {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    img {
+        margin-right: 10px;
+        width: 14px;
+        @media only screen and (min-width: 1024px) {
+            width: 29px;
+        }
+    }
+}
+
+.star {
+    width: 14px;
+    height: 14px;
+    margin: 4px 3px;
+
+    @media only screen and (min-width: 1024px) {
+        width: 28px;
+        height: 28px;
+    }
+}

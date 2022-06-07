@@ -1,0 +1,86 @@
+.container {
+    display: flex;
+    margin: 14px 165px 14px 140px;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .choice {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 42px;
+        margin-right: 12px;
+        margin-bottom: 17px;
+        padding: 20px;
+        color: #585c72;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 24px;
+        text-align: center;
+        border: 1px solid rgba(88, 92, 114, 0.8);
+        border-radius: 5px;
+
+        &.selected {
+            background-color: #585c72;
+            color: #ffffff;
+        }
+
+        &.custom {
+            padding-right: 40px;
+
+            span {
+                content: '✕';
+                position: absolute;
+                right: 15px;
+                top: 9px;
+                font-size: 16px;
+                font-weight: 200;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .addCustomButton {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        border: 1px solid rgba(88, 92, 114, 0.6);
+    }
+
+    .measure {
+        position: absolute;
+        visibility: hidden;
+        left: -10000px;
+        width: auto;
+        height: auto;
+        white-space: nowrap;
+        padding: 8px 16px 6px 16px; // Compare to input.  Added pixel to account for border
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    .input {
+        height: 42px;
+        transition: width 0.1s linear;
+        padding: 8px 15px 8px 15px;
+        font-size: 16px;
+        font-weight: 600;
+        border-radius: 5px;
+        border: 1px solid #585c72;
+        background-color: #585c72;
+        text-align: center;
+        color: #ffffff;
+    }
+
+    .instruction {
+        font-size: 1.2rem;
+        margin-top: 1rem;
+        letter-spacing: -0.25px;
+        line-height: 25px;
+        color: #d0021b;
+    }
+}

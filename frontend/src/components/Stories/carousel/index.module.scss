@@ -1,0 +1,73 @@
+.container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    background: #383c58;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+.inner {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+.titleControls {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    margin: 2.6rem 0;
+
+    button {
+        margin: 0 2rem;
+    }
+
+    .back {
+        &::after {
+            content: 'Back'; /* Element matching left hand back button for center spacing the title only */
+            visibility: hidden;
+            display: flex;
+            font-weight: 600;
+            font-size: 1.6rem;
+            padding: 8px 16px;
+        }
+    }
+}
+
+.title {
+    color: rgba(255, 255, 255, 1);
+    align-self: center;
+    margin: auto;
+}
+
+.header {
+    color: rgba(255, 255, 255, 1);
+    font-size: 18px;
+    letter-spacing: 1.13px;
+    line-height: 23px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.carousel {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding: 0;
+}
+
+.carouselContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+    height: 292px;
+
+    &.small {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+}

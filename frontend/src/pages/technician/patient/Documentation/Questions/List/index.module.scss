@@ -1,0 +1,60 @@
+/*! autoprefixer grid: autoplace */
+
+.questionContainer {
+    flex: auto !important; /* ie11 */
+    width: 50%;
+
+    .questionList {
+        width: 100%;
+
+        .row {
+            display: grid;
+            grid-template-columns: 0.25fr 4fr;
+            row-gap: 20px;
+            grid-template-areas: 'Question Answer';
+
+            .rankHeader {
+                grid-area: Question;
+                display: flex;
+                align-items: center;
+                text-align: center;
+                letter-spacing: 0.25px;
+                text-transform: uppercase;
+                color: #000000;
+            }
+
+            .question {
+                grid-area: Answer;
+                font-weight: 600;
+                font-size: 18px;
+                line-height: 24px;
+                letter-spacing: -0.2px;
+                text-transform: uppercase;
+                color: #000000;
+            }
+
+            .rank {
+                grid-area: Question;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-weight: bold;
+                font-size: 18px;
+                line-height: 24px;
+                color: rgba(0, 0, 0, 1);
+            }
+            .answer {
+                grid-area: Answer;
+                display: flex;
+                align-items: center;
+                padding-left: 20px;
+                font-size: 16px;
+                line-height: 20px;
+                letter-spacing: -0.251429px;
+                color: #262626;
+                mix-blend-mode: normal;
+                opacity: 0.6;
+            }
+        }
+    }
+}

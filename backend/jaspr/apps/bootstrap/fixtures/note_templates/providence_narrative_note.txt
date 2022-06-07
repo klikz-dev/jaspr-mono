@@ -1,0 +1,88 @@
+{% load tz %}
+Patient was offered the Jaspr Health tablet to assist delivery of evidence-based interventions to reduce suicide-related suffering and deaths. Assigned activities include: {% if has_suicide_assessment %}self-report of suicide risk assessment, {% endif %} lethal means counseling{% if has_stability_plan %}, crisis stabilization planning, psychoeducation about behavioral skills to manage emotional distress, and hope generating insights from People with Lived Experience{% endif %}.
+
+
+==================================================================
+SUICIDE STATUS INTERVIEW FINDINGS FROM PATIENT USE OF JASPR HEALTH
+==================================================================
+
+Date of Access: {{ first_accessed|timezone:timezone|date:"m/d/Y h:i A" }} {{timezone_abbrev}}
+Last modified: {{activities_last_modified|timezone:timezone|date:"m/d/Y h:i A" }} {{timezone_abbrev}}
+{% if has_suicide_assessment %}
+When asked about what led to urges to harm themselves that brought them here today, patient said: "{{ crisis_desc }}"
+
+-------------------------
+Risk & Protective Factors
+-------------------------
+
+The Suicide Index Score was {% if scoring_suicide_index_score is not None %}{{ scoring_suicide_index_score }}{% else %}"not calculated due to missing answers,{% endif %} risk group: {% if scoring_suicide_index_score_typology %}{{ scoring_suicide_index_score_typology }}{% else %}Unknown*{% endif %}.
+
+The patient rated their overall risk to kill themselves as: {% if suicide_risk %}{{ suicide_risk }} {% else %}The patient did not rate their overall risk to kill themselves*{% endif %} on 1-will not kill self to 5-will kill self scale.
+
++ Current suicide ideation: {{ suicidal_yes_no }}{% if suicidal_yes_no_describe %} described as "{{ suicidal_yes_no_describe }}"{% endif %} with frequency of {{ suicidal_freq }} times per {{ suicidal_freq_units }} that lasts for {{ length_suicidal_thought }}. These thoughts {{ worse_yes_no }} new or worse than usual baseline suicide ideation. Patient {{ nssi_yes_no }} report history of non-suicidal intentional self-injury.
+
++ Access to Means: Firearm {{ firearms_yes_no }}{% if firearms_yes_no_describe %} described as "{{ firearms_yes_no_describe }}"{% endif %}. Other means {{ means_yes_no }},{% if means_yes_no_describe %} described as "{{ means_yes_no_describe }}"{% endif %}.
+
++ Plan: {{ plan_yes_no }},{% if plan_yes_no_describe %} described as "{{ plan_yes_no_describe }}"{% endif %}. {% if steps_yes_no == None %}Patient did not answer whether they have or have not taken steps{% else %}Patient reported they {{ steps_yes_no }} taken steps{% endif %} to prepare a suicide attempt{% if steps_yes_no_describe %}, described as "{{ steps_yes_no_describe }}"{% endif %} and {% if practiced_yes_no is None %}did not answer whether they have or have not{% else %}reports they {{ practiced_yes_no }}{% endif %} practiced how they would take their life{% if practiced_yes_no_describe %} described as "{{ practiced_yes_no_describe }}"{% endif %}.
+
++ Past Suicide Attempt(s): Patient reported having attempted suicide {{ times_tried }}{% if times_tried_describe %} described as "{{ times_tried_describe }}"{% endif %}. They stated that they {{ current_yes_no }} here today because of a current suicide attempt{% if current_yes_no_describe %}, described as "{{ current_yes_no_describe }}"{% endif %} and that they {{ intent_yes_no }} made a past suicide attempt with intent to die{% if intent_yes_no_describe %} described as "{{ intent_yes_no_describe }}"{% endif %}.
+
++ Substance Abuse: {{ abuse_yes_no }}{% if abuse_yes_no_describe %}, described as "{{ abuse_yes_no_describe }}"{% endif %}
+
++ Insomnia: {{ sleep_yes_no }}{% if sleep_yes_no_describe %} described as "{{ sleep_yes_no_describe }}"{% endif %}
+
+{% if reasons_live %}The patient's reasons for living are: "{{ reasons_live }}"{% else %}The patient has missing data on reasons for living {% endif %} and {% if reasons_die %}reasons for dying are: "{{ reasons_die }}"{% else %}has missing data on reasons for dying.{% endif %}
+
+The Suicide Status Interview Core Assessment items were {{ core_suicide_items_text }}.
+
+{% for row in core_suicide_items_data%}
+{{ forloop.counter }} - {{row.0|title}} - {% if row.1 %}{{row.1}}{{"/5"}}{% else %}not answered{% endif %}
+{% if row.2 %}{{row.2}}{% endif %}{% endfor %}
+
+**High hopelessness, self-hate, and overall risk may suggest chronic suicidality. High agitation and stress may suggest acute suicidality
+
+When asked about the one thing that would make you not suicidal patient said: "{{ one_thing }}".
+
+Other self-reported information related to risk and history:
++ Past hospitalization for a mental health or substance use problem: {{ hospitalized_yes_no }}{% if hospitalized_yes_no_describe %}, "{{ hospitalized_yes_no_describe }}"{% endif %}
++ Impulsive: {{ impulsive_yes_no }}{% if impulsive_yes_no_describe %}, described as "{{ impulsive_yes_no_describe }}"{% endif %}
++ Loss: {{ losses_yes_no }}{% if losses_yes_no_describe %}, described as "{{ losses_yes_no_describe }}"{% endif %}
++ Relationship Problems: {{ relationship_yes_no }}{% if relationship_yes_no_describe %}, described as "{{ relationship_yes_no_describe }}"{% endif %}
++ Burden on Others: {{ burden_on_others_yes_no }}{% if burden_on_others_yes_no_describe %}, described as "{{ burden_on_others_yes_no_describe }}"{% endif %}
++ Health or Physical Pain Problems: {{ health_yes_no }}{% if health_yes_no_describe %}, described as "{{ health_yes_no_describe }}"{% endif %}
++ Legal or Financial Problems: {{ legal_yes_no }}{% if legal_yes_no_describe %}, described as "{{ legal_yes_no_describe }}"{% endif %}
++ Shame about History or Current Life: {{ shame_yes_no }}{% if shame_yes_no_describe %}, described as "{{ shame_yes_no_describe }}"{% endif %}
+
+Agitation/distress: 1 (none at all) to 10 (highest ever)
++ {{ check_in_time0|date:"m/d/Y h:i A" }} Agitation: {{frustration0}} ; Distress: {{distress0}}
++ {{check_in_time1|date:"m/d/Y h:i A" }} Agitation: {{frustration1}} ; Distress: {{distress1}}{% endif %}
+
+{% if has_suicide_assessment or has_stability_plan %}
+-------------------------
+Lethal Means Counseling
+-------------------------
+
++ Willing To Secure Means:{% if skip_reason is not None and means_willing == quoted_no_entry_symbol %}Patient skipped lethal means counseling due to following reasons: {{skip_reason}}{% endif %} {% if means_willing != quoted_no_entry_symbol%}Patient reported being {{means_willing}} to secure means and identified the following strategies as useful in their situation: {{strategies_general}}, {{strategies_firearm}}, {{strategies_medicine}}, {{strategies_places}}, {{strategies_other}}, {{strategies_custom}}.
++ Someone can help secure lethal means: {{means_support_yes_no}}; describe: "{{means_support_who}}"
+{% endif %}{% endif %}
+{% if has_stability_plan %}
+-------------------------
+Crisis Stabilization Plan
+-------------------------
+
++ Willing To Secure Means: {% if not any_means and not skip_reason %}{{ quoted_no_entry_symbol }}{% endif %}{% if skip_reason is not None %}Patient skipped lethal means counseling due to following reasons: {{ skip_reason }}{% endif %}{% if any_means %} Patient reported being {{ means_willing }} to secure means and identified the following strategies as useful in their situation: General: {{ strategies_general }}, Firearm: {{ strategies_firearm }}, Medicine: {{ strategies_medicine }}, Places: {{ strategies_places }}, Other: {{ strategies_other }}, Custom: {{ strategies_custom }}.{% endif %}
+
++ Sources of support in a crisis: {% if supportive_people %}{% for person in supportive_people %}"{{ person.name }}": {% if person.phone %}"{{ person.phone }}"{% else %}{{ quoted_no_entry_symbol }}{% endif %}{%  if not forloop.last %}; {% endif %}{% endfor %}{% else %}{{ quoted_no_entry_symbol }}{% endif %}
+
++ Reasons for Living (ranked): "{{ ranked_reasons_live }}"
+
++ Warning Signs: Patient said they know they're about to be in crisis when: Stress: {{ ws_stressors_oneline }}; Thoughts: {{ ws_thoughts_oneline }}; Feelings: {{ ws_feelings_oneline }}; Actions: {{ ws_actions_oneline }}.
+
++ Coping Strategies: Patient identified the follow strategies as possibly helpful in a crisis: Body: {{ coping_body }}; Distract: {{ coping_distract }}; Help others: {{ coping_help_others }}; Courage: {{ coping_courage }}; Senses: {{ coping_senses }}
+
++ Confidence in Ability to Use Coping Strategies (out of 100): {{ stability_confidence }}
+
++ Readiness: When asked how ready they are to leave the emergency department, {% if readiness != READINESS_VERY_READY %}patient reported {{ readiness }} for discharge, citing "{{ readiness_no }}" as reason(s) for what would help to feel readier.{% else %}patient reported {{ readiness }} for discharge because: {{ readiness_yes_reasons }} Patient reported that what has changed since being in the ED is: "{{ readiness_yes_changed }}"{% endif %}
+
++ Stability Plan to Take Home: Patient {{ tools_to_go_status }} initiated set up of Jaspr at Home to access an electronic version of their crisis stability plan and other resources available post-discharge.
+{% endif %}

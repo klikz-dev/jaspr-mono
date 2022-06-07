@@ -1,0 +1,88 @@
+{% load tz %}
+Patient used a Jaspr Health tablet to provide the following self-reported suicide assessment. Clinician reviewed patient self-report. Text copied from Jaspr tool:
+
+Patient was offered the Jaspr Health tablet to assist delivery of evidence-based interventions to reduce suicide-related suffering and deaths.
+
+Assigned activities included:
+
+{% if has_suicide_assessment %}self-report of suicide risk assessment, {% endif %}{% if has_stability_plan or has_suicide_assessment%}lethal means counseling{% endif %}{% if has_stability_plan %}, safety planning, psychoeducation about behavioral skills to manage emotional distress, and hope generating insights from People with Lived Experience{% endif %}.
+
+==================================================================
+Has patient had any thoughts of harming self: {MSEYES/NO: 58190}
+If yes, does patient have a plan: {MSEYES/NO/NA: 58191}
+
+Current suicide ideation: {{ suicidal_yes_no }}{% if suicidal_yes_no_describe %} described as "{{ suicidal_yes_no_describe }}"{% endif %} with frequency of {{ suicidal_freq }} times per {{ suicidal_freq_units }} that lasts for {{ length_suicidal_thought }}. These thoughts {{ worse_yes_no }} new or worse than usual baseline suicide ideation.
+
+{% for row in core_suicide_items_data%}
+{{ forloop.counter }} - {{row.0|title}} - {% if row.1 %}{{row.1}}{{"/5"}}{% else %}not answered{% endif %}
+{% if row.2 %}"{{row.2}}"{% endif %}{% endfor %}
+
+==================================================================
+Plan: {MSESUICIDEPLAN: 58388}
+Is there an intent to act on these thoughts: {MSEYES/NO/NA: 58191}
+Has patient acted on these thoughts in the past: {MSEYES/NO/NA: 58191}
+
+Plan: {{ plan_yes_no }}{% if plan_yes_no_describe %}, described as "{{ plan_yes_no_describe }}"{% endif %}. {% if steps_yes_no == None %}Patient did not answer whether they have or have not taken steps{% else %}Patient reported they {{ steps_yes_no }} taken steps{% endif %} to prepare a suicide attempt{% if plan_yes_no_describe %}, described as "{{ steps_yes_no_describe }}"{% endif %} and {% if practiced_yes_no is None %}did not answer whether they have or have not{% else %}reports they {{ practiced_yes_no }}{% endif %} practiced how they would take their life{% if practiced_yes_no_describe %} described as "{{ practiced_yes_no_describe }}"{% endif %}.
+
+==================================================================
+Number of previous attempts: {MSENUMBEROFATTEMPTS: 58191}
+
+Past Suicide Attempt(s): Patient reported having attempted suicide {{ times_tried }}{% if times_tried_describe %} described as "{{ times_tried_describe }}"{% endif %}. They stated that they {{ current_yes_no }} here today because of a current suicide attempt{% if current_yes_no_describe %}, described as "{{ current_yes_no_describe }}"{% endif %} and that they {{ intent_yes_no }} made a past suicide attempt with intent to die{% if intent_yes_no_describe %} described as "{{ intent_yes_no_describe }}"{% endif %}.
+
+The patient rated their overall risk to kill themselves as: {% if suicide_risk %}{{ suicide_risk }} {% else %}The patient did not rate their overall risk to kill themselves*{% endif %} on 1-will not kill self to 5-will kill self scale.
+
+==================================================================
+Does patient have means readily available: {MSEYES/NO/NA: 58191}
+
+Firearm {{ firearms_yes_no }}{% if firearms_yes_no_describe %}, described as "{{ firearms_yes_no_describe }}"{% endif %}.
+
+==================================================================
+Access to other weapons or means: {YES/NO/UNABLE :63230}
+
+Other means {{ means_yes_no }}{% if means_yes_no_describe %}, described as "{{ means_yes_no_describe }}"{% endif %}.
+
+Willing To Secure Means: {% if not anymeans and not skip_reason %}{{ quoted_no_entry_symbol }}{% elif skip_reason %}Patient skipped lethal means counseling due to following reasons: {{ skip_reason }}{% endif %}{% if any_means %} Patient reported being {{ means_willing }} to secure means and identified the following strategies as useful in their situation: {{all_strategies}}.{% endif %} Someone can help secure lethal means: {{means_support_yes_no}}; describe: {{means_support_who}}
+{% if has_stability_plan %}
+
+When asked about what led to urges to harm themselves that brought them here today, patient said: "{{ crisis_desc }}"
+
+==================================================================
+Risk Factors: {MSESUICIDERISK: 58387}
+
+Other self-reported information related to risk and history:
++ Insomnia: {{ sleep_yes_no }}{% if sleep_yes_no_describe %}, described as "{{ sleep_yes_no_describe }}"{% endif %}
++ Impulsive: {{ impulsive_yes_no }}{% if impulsive_yes_no_describe %}, described as "{{ impulsive_yes_no_describe }}"{% endif %}
++ Loss: {{ losses_yes_no }}{% if losses_yes_no_describe %}, described as "{{ losses_yes_no_describe }}"{% endif %}
++ Relationship Problems: {{ relationship_yes_no }}{% if relationship_yes_no_describe %}, described as "{{ relationship_yes_no_describe }}"{% endif %}
++ Burden on Others: {{ burden_on_others_yes_no }}{% if burden_on_others_yes_no_describe %}, described as "{{ burden_on_others_yes_no_describe }}"{% endif %}
++ Health or Physical Pain Problems: {{ health_yes_no }}{% if health_yes_no_describe %}, described as "{{ health_yes_no_describe }}"{% endif %}
++ Legal or Financial Problems: {{ legal_yes_no }}{% if legal_yes_no_describe %}, described as "{{ legal_yes_no_describe }}"{% endif %}
++ Shame about History or Current Life: {{ shame_yes_no }}{% if shame_yes_no_describe %}, described as "{{ shame_yes_no_describe }}"{% endif %}
+{% endif %}
+
+==================================================================
+Risk factors, cont.
+
+High risk demographics: history of intentional self-injury, substance use, past psychiatric hospitalization: Patient {{ nssi_yes_no }} report history of non-suicidal intentional self-injury.
+Substance Abuse: {{ abuse_yes_no }}{% if abuse_yes_no_describe %}, described as "{{ abuse_yes_no_describe }}"{% endif %} Past hospitalization for a mental health or substance use problem: {{ hospitalized_yes_no }}{% if hospitalized_yes_no_describe %}, described as "{{ hospitalized_yes_no_describe }}"{% endif %}"
+
+==================================================================
+Protective Risk Factors: {MSESUICIDEPROTECTIVE: 58396}
+
+{% if reasons_live %}The patient's reasons for living are: "{{ reasons_live }}"{% else %}The patient has missing data on reasons for living {% endif %} and {% if reasons_die %}reasons for dying are: "{{ reasons_die }}"{% else %}has missing data on reasons for dying.{% endif %} When asked about the one thing that would make you not suicidal patient said: "{{ one_thing }}". Sources of support in a crisis: {% if supportive_people %}{% for person in supportive_people %}"{{ person.name }}": {% if person.phone %}"{{ person.phone }}"{% else %}{{ quoted_no_entry_symbol }}{% endif %}{%  if not forloop.last %}; {% endif %}{% endfor %}{% else %}{{ quoted_no_entry_symbol }}{% endif %}
+
+==================================================================
+Risk level: {MSERISK: 61720}
+
+Agitation/distress: 1 (none at all) to 10 (highest ever)
++ {{check_in_time0|timezone:timezone|date:'m/d/Y h:i A'}} Agitation: {{frustration0}} ; Distress: {{distress0}}
++ {{check_in_time1|timezone:timezone|date:'m/d/Y h:i A'}} Agitation: {{frustration1}} ; Distress: {{distress1}}
+
+==================================================================
+Current Homicidal Risk: (thoughts, plan, intent to act, past act, previous attempts, means, risk factors, protective factors, risk level)
+
+==================================================================
+Grave Disability: (Pt gravely disabled, risk factors, risk level)
+
+==================================================================
+Risk Analysis: After review of all the relevant factors and placing these in the context of all observations and information available at this time, my judgment of the patient's overall risk is the following: {MSERISK: 61720}

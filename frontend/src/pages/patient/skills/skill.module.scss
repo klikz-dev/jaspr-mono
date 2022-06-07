@@ -1,0 +1,105 @@
+.container {
+    position: relative;
+    display: flex;
+    flex: 0;
+    flex-basis: 50%;
+    margin: 0;
+    overflow: hidden;
+    flex-basis: 23.3rem;
+    min-width: 23.3rem;
+}
+
+.inner {
+    display: flex;
+    flex-direction: column-reverse;
+    border-radius: 8px;
+    margin: 0.75rem;
+    overflow: hidden;
+}
+
+.small {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 162px;
+    min-width: 162px;
+}
+
+.thumb {
+    display: flex;
+    flex: 1;
+    width: 100%;
+    align-self: flex-start;
+}
+
+.save {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 1);
+    padding-left: 13px;
+    padding-right: 11px;
+    padding-top: 9px;
+    padding-bottom: 9px;
+
+    svg {
+        display: flex;
+        margin: 5px;
+        margin-left: auto;
+        width: 21px;
+        height: 21px;
+
+        path {
+            fill: none;
+            stroke: #808080;
+        }
+    }
+
+    &.saved {
+        svg {
+            path {
+                fill: #ff3b00;
+                stroke: #ff3b00;
+            }
+        }
+    }
+}
+
+.saveText {
+    font-size: 10.5px;
+    color: #3e3e3e;
+    opacity: 0.9;
+    letter-spacing: 0;
+}
+
+.banner {
+    display: flex;
+    /* Take 3.5 times the height of the lowercase 'x',
+        and add in the current line height (`1.25rem`) */
+    //height: calc(5ex + 1.25rem);
+    min-height: 53px;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+    flex-shrink: 0;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-start;
+}
+
+.bannerText {
+    font-size: 13px;
+    text-align: center;
+    color: white;
+}
+
+.progress {
+    height: 5px;
+    width: 100%;
+    background-color: #d7d7d7;
+}
+
+.track {
+    height: 100%;
+    background-color: #50a7bd;
+}

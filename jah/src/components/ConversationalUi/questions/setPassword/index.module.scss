@@ -1,0 +1,35 @@
+.container {
+    display: flex;
+    width: 366px;
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: column;
+}
+
+.instruction {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    letter-spacing: -0.25px;
+    color: #d0021b;
+}
+
+.label {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+.field-title {
+    color: #2f344f;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.input {
+    height: 54px;
+    font-size: 1rem;
+    padding: 1rem;
+    border: 1px solid #979797;
+    border-radius: 4px;
+    background-color: #ffffff;
+}

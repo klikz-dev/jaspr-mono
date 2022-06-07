@@ -1,0 +1,32 @@
+.fade-in-enter .fade-in-appear {
+    opacity: 0;
+}
+
+.fade-in-appear-active {
+    animation-name: fadeInOpacity;
+    animation-duration: 1.5s;
+}
+.fade-in-enter-done {
+    opacity: 1;
+}
+
+.fade-in-exit {
+    opacity: 0;
+}
+
+.fade-in-exit-active {
+    opacity: 0;
+}
+
+.fade-in-exit-active {
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeInOpacity {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

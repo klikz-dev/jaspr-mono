@@ -1,0 +1,43 @@
+/*! autoprefixer grid: autoplace */
+
+.question {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+    color: rgba(0, 0, 0, 1);
+}
+
+.questionText {
+    display: grid;
+    grid-template-columns: 4fr;
+    row-gap: 5px;
+    grid-template-areas: 'Answer';
+    width: 100%;
+
+    .answer {
+        font-size: 18px;
+        line-height: 24px;
+        color: rgba(0, 0, 0, 1);
+        text-align: left;
+        grid-area: Answer;
+
+        span {
+            &:empty {
+                &:before {
+                    font-style: normal;
+                    content: '[-]';
+                }
+            }
+            &:not(:empty) {
+                font-style: italic;
+                &:before {
+                    content: open-quote;
+                }
+                &:after {
+                    content: close-quote;
+                }
+            }
+        }
+    }
+}

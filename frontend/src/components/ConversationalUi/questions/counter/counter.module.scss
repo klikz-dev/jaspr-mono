@@ -1,0 +1,99 @@
+.counter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 165px;
+
+    .timesSection {
+        display: flex;
+        align-self: flex-start;
+        align-items: center;
+
+        input {
+            height: 54px;
+            width: 85px;
+            text-align: center;
+            border: none;
+            border-bottom: 1px solid rgba(151, 151, 151, 1);
+            font-size: 16px;
+            font-weight: 600;
+            color: rgba(89, 89, 89, 1);
+            background-color: transparent;
+            &[type='number'] {
+                -moz-appearance: textfield;
+            }
+            &[type='number']::-webkit-inner-spin-button,
+            &[type='number']::-webkit-outer-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+        }
+
+        .times {
+            color: rgba(74, 74, 74, 1);
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: 1.25px;
+            line-height: 12px;
+            margin: 0 0 0 22px;
+        }
+    }
+
+    .options {
+        display: flex;
+        flex-grow: 1;
+        flex-direction: row;
+        padding-left: 33px;
+        justify-content: center;
+
+        .option {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 22px;
+            border: 1px solid #979797;
+            flex-grow: 1;
+
+            &:not(:last-child) {
+                border-right: none;
+            }
+
+            &:first-child {
+                border-top-left-radius: 6px;
+                border-bottom-left-radius: 6px;
+            }
+
+            &:last-child {
+                border-top-right-radius: 6px;
+                border-bottom-right-radius: 6px;
+            }
+
+            .label {
+                display: flex;
+                padding: 18px;
+                color: rgba(74, 74, 74, 1);
+                font-family: 'Source Sans Pro';
+                font-size: 15px;
+                font-weight: 600;
+                letter-spacing: 1.25px;
+                flex-grow: 1;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+            }
+
+            input {
+                position: absolute;
+                opacity: 0;
+                cursor: pointer;
+                height: 0;
+                width: 0;
+
+                &:checked + .label {
+                    background-color: rgba(88, 92, 114, 0.8);
+                    color: #fff;
+                }
+            }
+        }
+    }
+}

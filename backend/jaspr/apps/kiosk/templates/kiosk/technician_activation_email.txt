@@ -1,0 +1,9 @@
+Welcome to Jaspr!
+
+Click or copy paste the link below into your browser to activate your Jaspr Tech account.
+
+{{ activate_technician_url }}
+
+Best,
+
+Jaspr Health Team

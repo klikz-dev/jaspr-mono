@@ -1,0 +1,14 @@
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 100px;
+    max-height: 250px;
+    list-style-type: none;
+    padding-top: 15px; /* Space for the plus and cross buttons. */
+    margin-top: -15px;
+    padding-right: 15px; /* Space for the plus and cross buttons. */
+    margin-right: -15px;
+    padding-left: 0;
+    margin-bottom: 0;
+    overflow-y: auto;
+}

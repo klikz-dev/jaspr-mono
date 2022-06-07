@@ -1,0 +1,47 @@
+.modalTitle {
+    color: rgba(255, 255, 255, 1);
+    font-size: 28px;
+    letter-spacing: 0;
+    text-align: center;
+}
+
+.patientIdLabel {
+    width: 288px;
+    color: rgba(255, 255, 255, 1);
+    font-size: 17px;
+    letter-spacing: 0;
+    text-align: center;
+    margin: 21px;
+    padding: 1rem;
+    border-top: 1px solid rgba(151, 151, 151, 1);
+    border-bottom: 1px solid rgba(151, 151, 151, 1);
+}
+
+.checkboxes {
+    color: rgba(255, 255, 255, 1);
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+
+    label {
+        margin-bottom: 20px;
+    }
+}
+
+.buttons {
+    display: flex;
+    width: 320px;
+    justify-content: center;
+    button {
+        margin: 0 6px;
+    }
+}
+
+.error {
+    margin-top: 16px;
+    color: rgba(255, 255, 255, 1);
+
+    svg {
+        margin-right: 6px;
+    }
+}

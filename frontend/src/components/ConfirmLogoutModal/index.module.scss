@@ -1,0 +1,24 @@
+@import '../layouts/modals/index.module.scss';
+
+.buttonGroup {
+    composes: buttonGroup;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0.5rem;
+}
+
+.buttonConstraints {
+    max-width: 324px;
+}
+
+.outlinedButton {
+    composes: outlinedButton;
+    composes: buttonConstraints;
+    margin-bottom: 1rem;
+}
+
+.filledButton {
+    composes: filledButton;
+    composes: buttonConstraints;
+}

@@ -1,0 +1,69 @@
+{% load tz %}Date of Access: {{ first_accessed|timezone:timezone|date:"m/d/Y h:i A" }} {{timezone_abbrev}}
+Last modified: {{csp_modified|timezone:timezone|date:"m/d/Y h:i A" }} {{timezone_abbrev}}
+
+Jaspr Health tablet was used by {{patient_first_name}} {{patient_last_name}} to create the following crisis stability plan.
+
+MY STABILITY PLAN
+
+1.Immediate Steps to Take
+To protect myself I plan to reduce access to my means. I will:
+{% if strategies_general_newline or strategies_firearm_newline or strategies_medicine_newline or strategies_places_newline or strategies_other_newline or strategies_custom_newline %}{% if strategies_general %}{{ strategies_general }}{% endif %}{% if strategies_firearm_newline %}
+
+Firearm:
+{{strategies_firearm_newline}}{% endif %}{% if strategies_medicine_newline %}
+
+Medicine:
+{{strategies_medicine_newline}}{% endif %}{% if strategies_places_newline %}
+
+Places:
+{{strategies_places_newline}}{% endif %}{% if strategies_other_newline %}
+
+Other:
+{{strategies_other_newline}}{% endif %}{% if strategies_custom_newline %}
+
+Custom:
+{{strategies_custom_newline}}{% endif %}{% else %}{{ no_entry_symbol }}{% endif %}
+
+
+2.Supportive People
+My list of contacts who can help:
+{% if supportive_people %}{% for person in supportive_people %}{{ person.name }}: {% if person.phone %}{{ person.phone }}{% else %}{{ quoted_no_entry_symbol }}{% endif %}{% endfor %}{% else %}{{ quoted_no_entry_symbol }}{% endif %}
+
+
+3.Reasons for Living
+{% if has_reasons_live %}
+{{ ranked_reasons_live_numbered }}{% else %}{{ no_entry_symbol }}{% endif %}
+
+
+4.Recognize Warning Signs
+I know I'm about to be in a crisis when I experience:
+{% if ws_actions or ws_feelings or ws_thoughts or ws_stressors %}{% if ws_actions %}Actions:
+{{ws_actions}}{% endif %}{% if ws_feelings %}
+Feelings:
+{{ws_feelings}}{% endif %}{% if ws_thoughts %}
+Thoughts:
+{{ws_thoughts}}{% endif %}{% if ws_stressors %}
+Stressors:
+{{ws_stressors}}{% endif %}{% else %}{{no_entry_symbol}}{% endif %}
+
+
+5.Coping Strategies
+The top strategies that help me cope:
+{% if coping_body_newline or coping_distract_newline or coping_help_others_newline or coping_courage_newline or coping_senses_newline %}{% if coping_body_newline %}Body:
+{{coping_body_newline}}{% endif %}{% if coping_distract_newline %}
+
+Distract:
+{{coping_distract_newline}}{% endif %}{% if coping_help_others_newline %}
+
+Help Others:
+{{coping_help_others_newline}}{% endif %}{% if coping_courage_newline %}
+
+Courage:
+{{coping_courage_newline}}{% endif %}{% if coping_senses_newline %}
+
+Senses:
+{{coping_senses_newline}}{% endif %}{% else %}{{no_entry_symbol}}{% endif %}
+
+Other:
++ Watch Jaspr Videos
++ 24/7 National Hotline, call 1-800-273-8255, text 741741

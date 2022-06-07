@@ -1,0 +1,123 @@
+.login {
+    display: flex;
+    width: 100%;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 724px;
+    align-items: center;
+
+    button {
+        margin: auto;
+    }
+}
+
+.logo {
+    width: 86px;
+    height: 86px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    padding: 0 20px;
+    width: 100%;
+}
+
+.label {
+    color: #ffffff;
+    font-size: 2rem;
+    letter-spacing: 0.15px;
+}
+
+.inputContainer {
+    display: flex;
+    height: 59px;
+    width: 100%;
+    max-width: 400px;
+    margin: 10px 0;
+    padding: 0 16px;
+    justify-content: center;
+    border-radius: 8px;
+    background-color: rgba(238, 238, 240, 1);
+}
+
+.input {
+    border: none;
+    color: rgba(0, 0, 0, 1);
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+.error {
+    margin: 10px;
+    color: orangered;
+}
+
+.orDivider {
+    position: relative;
+    display: flex;
+    width: 100%;
+    text-align: center;
+    color: rgba(255, 255, 255, 1);
+    align-items: center;
+
+    span {
+        display: flex;
+        flex: 1;
+        border-bottom: 1px solid rgba(255, 255, 255, 1);
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+}
+
+.forgot {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+    color: rgba(255, 255, 255, 1);
+    font-size: 1.6rem;
+    letter-spacing: 0;
+}
+
+.signupRule {
+    border-top-width: 1px;
+    border-top-color: #979797;
+}
+
+.signupButton {
+    display: flex;
+    height: 59px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 1);
+    align-items: center;
+    justify-content: center;
+}
+
+.signupButtonText {
+    color: rgba(64, 68, 95, 1);
+    font-size: 1.8rem;
+    letter-spacing: 0.15px;
+}
+
+.disclaimer {
+    margin-top: flex;
+    max-width: 360px;
+    color: #f7f7f7;
+    font-size: 1.2rem;
+    font-weight: 300;
+    letter-spacing: 0;
+    line-height: 15px;
+    text-align: center;
+}
+
+.version {
+    margin-top: 1rem;
+}

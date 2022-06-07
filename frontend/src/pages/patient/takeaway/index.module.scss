@@ -1,0 +1,218 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    min-height: 100%;
+    background-color: #eceef5;
+    width: 100%;
+}
+
+.area {
+    display: block;
+    flex-grow: 1;
+    position: relative;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    font-family: 'Source Sans Pro';
+    background-color: #eceef5;
+    margin-top: 65px;
+    overflow-y: scroll;
+    padding-bottom: 115px;
+
+    .title {
+        flex: 4;
+        font-size: 32px;
+        text-align: center;
+        color: #000000;
+        font-weight: 300;
+        margin-top: 0;
+        margin-bottom: 2.5rem;
+    }
+}
+
+.mainLayout {
+    display: flex;
+    margin-bottom: 2rem;
+    flex-direction: column;
+
+    @media (min-width: 830px) {
+        flex-direction: row;
+    }
+}
+
+.leftColumn {
+    flex-grow: 1;
+    flex-shrink: 0;
+    @media (min-width: 830px) {
+        flex-basis: calc(50% - 2.5rem);
+        width: calc(50% - 2.5rem);
+    }
+    background-color: #ffffff;
+    border-radius: 0 0 5px 5px;
+}
+
+.centerColumn {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 2.5rem;
+    width: 2.5rem;
+}
+
+.rightColumn {
+    flex-grow: 1;
+    flex-shrink: 0;
+    @media (min-width: 830px) {
+        flex-basis: calc(50% - 2.5rem);
+        width: calc(50% - 2.5rem);
+    }
+}
+
+.leftColumn {
+    flex-grow: 1;
+    flex-shrink: 0;
+    @media (min-width: 830px) {
+        flex-basis: calc(50% - 2.5rem);
+        width: calc(50% - 2.5rem);
+    }
+    background-color: #ffffff;
+    border-radius: 0 0 5px 5px;
+}
+
+.centerColumn {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 2.5rem;
+    width: 2.5rem;
+}
+
+.rightColumn {
+    flex-grow: 1;
+    flex-shrink: 0;
+    @media (min-width: 830px) {
+        flex-basis: calc(50% - 2.5rem);
+        width: calc(50% - 2.5rem);
+    }
+}
+
+.titleBar {
+    padding: 0.75rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    text-transform: uppercase;
+    border-radius: 5px;
+    background-color: #72799f;
+    color: #ffffff;
+    font-size: 20px;
+    letter-spacing: 1.25px;
+    line-height: 25px;
+}
+
+.savedSection {
+    border-radius: 11px;
+    background-color: rgba(151, 154, 170, 0.1);
+    padding: 1rem;
+}
+
+.savedStories {
+    composes: savedSection;
+}
+
+.savedActivities {
+    composes: savedSection;
+    margin-bottom: 2rem;
+}
+
+.savedSectionHeader {
+    display: flex;
+    align-items: flex-start;
+
+    > div:first-child {
+        flex: 1;
+    }
+
+    > div:last-child {
+        flex: 1;
+    }
+}
+
+.subtitle {
+    color: rgba(73, 77, 87, 1);
+    font-size: 18px;
+    line-height: 23px;
+    margin-bottom: 0.75rem;
+}
+
+.savedSubtitle {
+    composes: subtitle;
+    align-self: baseline;
+    flex: 8;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.editButton {
+    display: flex;
+    cursor: pointer;
+    text-align: center;
+    height: 18px;
+    align-items: center;
+    gap: 4px;
+}
+
+.editLabel {
+    font-weight: 600;
+    font-size: 1.4rem;
+    letter-spacing: 0.875px;
+    color: rgba(73, 77, 87, 1);
+    text-transform: none;
+}
+
+.editIcon {
+    height: 18px;
+    width: 18px;
+}
+
+.doneButton {
+    cursor: pointer;
+    color: #68bbd0;
+    font-size: 12px;
+    line-height: 15px;
+    height: 18px;
+    content: 'Done';
+    text-transform: uppercase;
+    align-self: baseline;
+}
+
+.setupSuccessBanner {
+    position: fixed;
+    display: flex;
+    bottom: 0;
+    padding: 14px 35px;
+    background-color: #6d7184;
+    margin-left: calc(57px);
+    height: 59px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #ffffff;
+    letter-spacing: 1.38px;
+    font-size: 22px;
+    left: 50%;
+    margin-left: calc((-515px / 2) + 59px);
+    width: 515px;
+}
+
+.setupEditButton {
+    display: flex;
+    margin-left: 16px;
+    height: 22px;
+    min-width: 77px;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #6d7184;
+}

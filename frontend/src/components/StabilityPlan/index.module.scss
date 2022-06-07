@@ -1,0 +1,147 @@
+.titleBar {
+    padding: 0.75rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    text-transform: uppercase;
+    border-radius: 5px;
+    background-color: #72799f;
+    color: #ffffff;
+    font-size: 20px;
+    letter-spacing: 1.25px;
+    line-height: 25px;
+}
+
+.stabilityPlanList {
+    padding: 0 1rem 0 2rem;
+}
+
+.stabilityPlanListItem {
+    display: flex;
+    margin-bottom: 1.5rem;
+}
+
+.stabilityPlanListItemNumber {
+    flex: 1;
+
+    div {
+        display: flex;
+        width: 2.8rem;
+        height: 2.8rem;
+        border: 1px solid rgba(90, 97, 132, 1);
+        border-radius: 50%;
+        font-size: 1.7rem;
+        font-weight: 600;
+        color: rgba(90, 97, 132, 1);
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.stabilityPlanListItemContent {
+    flex: 6;
+}
+
+.editButton {
+    display: flex;
+    cursor: pointer;
+    text-align: center;
+    height: 18px;
+    align-items: center;
+    gap: 4px;
+}
+
+.editLabel {
+    font-weight: 600;
+    font-size: 1.4rem;
+    letter-spacing: 0.875px;
+    color: rgba(73, 77, 87, 1);
+    text-transform: none;
+}
+
+.editIcon {
+    height: 18px;
+    width: 18px;
+}
+
+.doneButton {
+    cursor: pointer;
+    color: #68bbd0;
+    font-size: 12px;
+    line-height: 15px;
+    height: 18px;
+    content: 'Done';
+    text-transform: uppercase;
+    align-self: baseline;
+}
+
+.contentHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #000000;
+    font-size: 18px;
+    letter-spacing: 1.13px;
+    line-height: 23px;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+.textBlock {
+    font-size: 16px;
+    letter-spacing: -0.2px;
+    line-height: 24px;
+    font-weight: 400;
+}
+
+.boldTextBlock {
+    composes: textBlock;
+    font-weight: bold;
+}
+
+.italicTextBlock {
+    composes: textBlock;
+    font-style: italic;
+}
+
+.quotedTextBlock {
+    composes: italicTextBlock;
+    &:not(:empty) {
+        &:before {
+            content: open-quote;
+        }
+        &:after {
+            content: close-quote;
+        }
+    }
+}
+
+.unorderedList {
+    composes: textBlock;
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.orderedList {
+    composes: unorderedList;
+    list-style: none;
+    counter-reset: ordered-list-counter;
+
+    li {
+        counter-increment: ordered-list-counter;
+
+        &:before {
+            content: counter(ordered-list-counter) '. ';
+            font-weight: bold;
+        }
+    }
+}
+
+.bulletedList {
+    composes: textBlock;
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 0;
+}

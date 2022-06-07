@@ -1,0 +1,51 @@
+.section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: 200px;
+    max-width: 562px;
+    min-height: 87px;
+    margin-bottom: 16px;
+    padding: 2.4rem;
+    background-color: rgba(245, 249, 250, 1);
+    border-radius: 3px;
+    justify-content: center;
+    padding-right: 1.2rem;
+    padding-bottom: 0.8rem;
+
+    &:first-of-type {
+        svg {
+            top: 3rem;
+        }
+    }
+
+    svg {
+        position: absolute;
+        top: 40%;
+        left: -44px;
+        margin-bottom: -12px;
+    }
+
+    .assignedCircle {
+        position: absolute;
+        top: 40%;
+        left: -39.5px;
+        margin-bottom: -12px;
+        width: 13px;
+        height: 13px;
+        border: 3px solid rgba(255, 255, 255, 1);
+        background-color: rgba(184, 188, 204, 1);
+        border-radius: 50%;
+    }
+
+    .status {
+        text-transform: uppercase;
+        color: rgba(113, 113, 113, 1);
+        margin-bottom: 4px;
+    }
+
+    h6 {
+        margin: 0;
+    }
+}

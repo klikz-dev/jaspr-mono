@@ -1,0 +1,7 @@
+.questions {
+    display: flex;
+    flex-direction: column;
+    > div {
+        margin-bottom: 30px;
+    }
+}

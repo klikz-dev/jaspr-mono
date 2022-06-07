@@ -1,0 +1,287 @@
+image:
+  name: 128206503653.dkr.ecr.us-west-1.amazonaws.com/jaspr-build-server:latest
+  aws:
+    access-key: $ECR_BUILD_ACCESS_KEY_ID
+    secret-key: $ECR_BUILD_SECRET_ACCESS_KEY
+
+definitions:
+  caches:
+    frontend: frontend/node_modules
+    jah: jah/node_modules
+  services:
+    docker:
+      memory: 2048
+
+pipelines:
+  default:
+    - parallel:
+        - step:
+            size: 1x
+            name: Build & Test Frontend
+            caches:
+              - frontend
+            script:
+              - python ops/scripts/helper/check_git_branch_name.py $BITBUCKET_BRANCH
+              - cd frontend && yarn && yarn build
+        - step:
+            size: 2x
+            name: Build & Test Backend
+            caches:
+              - docker
+            script:
+              - python ops/scripts/helper/check_git_branch_name.py $BITBUCKET_BRANCH
+              - cd backend && make build-dev-base
+              - cd ../ops/docker
+              - docker-compose -f local.yml build --progress=plain
+              - docker-compose -f local.yml run --rm api-server pipenv check
+              - docker-compose -f local.yml run --rm api-server python manage.py makemigrations --check
+              - docker-compose -f local.yml run --rm api-server python manage.py check --deploy
+              - docker-compose -f local.yml run --rm api-server python manage.py test --parallel=8 --noinput
+            services:
+              - docker
+
+  branches:
+    release:
+      - parallel:
+          - step:
+              size: 1x
+              name: Build & Test Frontend
+              caches:
+                - frontend
+              artifacts:
+                - frontend/build/**
+              script:
+                - python ops/scripts/helper/check_git_branch_name.py $BITBUCKET_BRANCH
+                - cd frontend && yarn && yarn build
+          - step:
+              size: 2x
+              name: Build & Test Backend
+              caches:
+                - docker
+              artifacts:
+                - containers.tar.gz
+              script:
+                - python ops/scripts/helper/check_git_branch_name.py $BITBUCKET_BRANCH
+                - cd backend && make build-dev-base
+                - cd ../ops/docker
+                - docker-compose -f local.yml build --progress=plain
+                - docker-compose -f local.yml run --rm api-server pipenv check
+                - docker-compose -f local.yml run --rm api-server python manage.py makemigrations --check
+                - docker-compose -f local.yml run --rm api-server python manage.py check --deploy
+                - docker-compose -f local.yml run --rm api-server python manage.py test --parallel=8 --noinput
+                - docker save jaspr/base-server worker scheduler | gzip > $BITBUCKET_CLONE_DIR/containers.tar.gz
+              services:
+                - docker
+      - step:
+          size: 2x
+          name: Deploy Release to AWS Dev
+          deployment: Development
+          caches:
+            - frontend
+            - jah
+            - docker
+          script:
+            - docker load < ${BITBUCKET_CLONE_DIR}/containers.tar.gz
+            - /bootstrap
+            - aws s3 ls s3://jaspr-terraform-state-development # Making sure we have a network connection to S3 to store state
+            - cd ops/scripts/helper/ && python bump_fe_version.py $BITBUCKET_BUILD_NUMBER 0
+            - cd ../deployment && ./build_and_apply.sh dev False
+          services:
+            - docker
+          artifacts:
+            - ops/script/deployment/*.tf
+
+    production:
+      - parallel:
+          - step:
+              size: 1x
+              name: Build & Test Frontend
+              caches:
+                - frontend
+              artifacts:
+                - frontend/build/**
+              script:
+                - python ops/scripts/helper/check_git_branch_name.py $BITBUCKET_BRANCH
+                - cd frontend && yarn && yarn build
+          - step:
+              size: 2x
+              name: Build & Test Backend
+              caches:
+                - docker
+              artifacts:
+                - containers.tar.gz
+              script:
+                - python ops/scripts/helper/check_git_branch_name.py $BITBUCKET_BRANCH
+                - cd backend && make build-dev-base
+                - cd ../ops/docker
+                - docker-compose -f local.yml build --progress=plain
+                - docker-compose -f local.yml run --rm api-server pipenv check
+                - docker-compose -f local.yml run --rm api-server python manage.py makemigrations --check
+                - docker-compose -f local.yml run --rm api-server python manage.py check --deploy
+                - docker-compose -f local.yml run --rm api-server python manage.py test --parallel=8 --noinput
+                - cd ../scripts/helper && ./tag_release.sh
+                - docker save jaspr/base-server worker scheduler | gzip > $BITBUCKET_CLONE_DIR/containers.tar.gz
+              services:
+                - docker
+      - step:
+          size: 2x
+          name: Deploy to Integration
+          deployment: Integration
+          caches:
+            - frontend
+            - jah
+            - docker
+          script:
+            - docker load < ${BITBUCKET_CLONE_DIR}/containers.tar.gz
+            - /bootstrap
+            - aws s3 ls s3://jaspr-terraform-state-integration # Making sure we have a network connection to S3 to store state
+            - cd ops/scripts/helper/ && python bump_fe_version.py $BITBUCKET_BUILD_NUMBER "$(./get_software_version.sh)"
+            - cd ../deployment && ./build_and_apply.sh int False
+          services:
+            - docker
+          artifacts:
+            - ops/script/deployment/*.tf
+      - step:
+          size: 2x
+          name: Deploy to Production
+          deployment: Production
+          trigger: manual
+          caches:
+            - frontend
+            - jah
+            - docker
+          script:
+            - docker load < ${BITBUCKET_CLONE_DIR}/containers.tar.gz
+            - /bootstrap
+            - aws s3 ls s3://jaspr-production-terraform-state # Making sure we have a network connection to S3 to store state
+            - cd ops/scripts/helper/ && python bump_fe_version.py $BITBUCKET_BUILD_NUMBER "$(./get_software_version.sh)"
+            - cd ../deployment && ./build_and_apply.sh prod False
+          services:
+            - docker
+          artifacts:
+            - ops/script/deployment/*.tf
+
+  pull-requests:
+    "**": # Runs for all branches not defined below
+      - parallel:
+          - step:
+              size: 2x
+              name: Build & Test Frontend
+              caches:
+                - frontend
+              artifacts:
+                - frontend/build/** # If we can inject the production env variables, we can just upload this in the next step instead of rebuilding
+              script:
+                - python ops/scripts/helper/check_git_branch_name.py $BITBUCKET_BRANCH
+                - /bootstrap
+                - cd frontend && yarn && yarn build
+          - step:
+              size: 2x
+              name: Build & Test Backend
+              caches:
+                - docker
+              artifacts:
+                - containers.tar.gz
+              script:
+                - python ops/scripts/helper/check_git_branch_name.py $BITBUCKET_BRANCH
+                - /bootstrap
+                - cd backend && make build-dev-base
+                - cd ../ops/docker
+                - docker-compose -f local.yml build --progress=plain
+                - docker-compose -f local.yml run --rm api-server pipenv check # this is safety check
+                - docker-compose -f local.yml run --rm api-server python manage.py makemigrations --check
+                - docker-compose -f local.yml run --rm api-server python manage.py check --deploy
+                - docker-compose -f local.yml run --rm api-server python manage.py test --parallel=8 --noinput
+                - docker save jaspr/base-server worker scheduler | gzip > $BITBUCKET_CLONE_DIR/containers.tar.gz
+              services:
+                - docker
+      - step:
+          size: 2x
+          name: Deploy Branch to AWS Dev
+          deployment: Development
+          caches:
+            - frontend
+            - jah
+            - docker
+          script:
+            - docker load < ${BITBUCKET_CLONE_DIR}/containers.tar.gz
+            - /bootstrap
+            - aws s3 ls s3://jaspr-terraform-state-development # Making sure we have a network connection to S3 to store state
+            - cd ops/scripts/helper/ && python bump_fe_version.py $BITBUCKET_BUILD_NUMBER 0
+            - cd ../deployment
+            - ./build_and_apply.sh dev True "./jaspr/apps/bootstrap/fixtures/jaspr_root.json;./jaspr/apps/bootstrap/fixtures/jaspr_content.json;./jaspr/apps/bootstrap/fixtures/jaspr_dev_only.json;./jaspr/apps/bootstrap/fixtures/jaspr_user.json"
+          services:
+            - docker
+          artifacts:
+            - ops/script/deployment/*.tf
+      - step:
+          size: 2x
+          name: Teardown Branch on AWS Dev
+          artifacts:
+            download: false
+          trigger: manual
+          script:
+            - /bootstrap
+            - cd ./ops/scripts/deployment
+            - ./destroy.sh dev
+          services:
+            - docker
+
+    release: # This is here so the above flow doesn't run on Release
+      - step:
+          name: Ignore
+          script:
+            - echo "ignore."
+
+    production: # This is here so the top flow doesn't run on Release
+      - step:
+          name: Ignore
+          script:
+            - echo "ignore."
+
+  custom:
+    integration-add-static-token:
+      - step:
+          name: Add Static Token
+          deployment: Integration
+          script:
+            - cd ./ops/scripts/helper
+            - ./check_branch.sh production
+            - python scheduler_generate_otp.py integration
+    production-content-update:
+      - step:
+          name: Confirm Branch and Generate Fixture Data
+          deployment: Development
+          script:
+            - cd ./ops/scripts/helper
+            - ./check_branch.sh production
+            - pip install python-dateutil
+            - python scheduler_save_fixtures.py release # Redeploy Scheduler with flags to dump fixtures and move to S3
+            - python check_for_saved_fixtures.py jaspr-release-fixtures export/task.json # Checking for updated task.json because its the last fixtures to be generated
+            - cd $BITBUCKET_CLONE_DIR
+            - mkdir dumped_fixtures
+            - aws s3 cp s3://jaspr-release-fixtures/export/content.json ./dumped_fixtures/content.json # The Scheduler startup script uploads dumped fixtures to S3, we need to retrieve them.
+            - aws s3 cp s3://jaspr-release-fixtures/export/task.json ./dumped_fixtures/task.json
+          artifacts:
+            - dumped_fixtures/*.json
+
+      - step:
+          name: Update Integration Content
+          deployment: Integration
+          script:
+            - aws s3 sync s3://jaspr-production-media s3://jaspr-integration-media
+            - aws s3 cp ./dumped_fixtures/content.json s3://jaspr-integration-fixtures/import/content.json
+            - aws s3 cp ./dumped_fixtures/task.json s3://jaspr-integration-fixtures/import/task.json
+            - cd ./ops/scripts/helper
+            - python scheduler_load_fixtures.py integration "s3://jaspr-integration-fixtures/import/content.json;s3://jaspr-integration-fixtures/import/task.json"
+
+      - step:
+          name: Update Production Content
+          deployment: Production
+          trigger: manual
+          script:
+            - aws s3 sync s3://jaspr-production-media s3://589623662327-media
+            - aws s3 cp ./dumped_fixtures/content.json s3://589623662327-fixtures-us-west-1/import/content.json
+            - aws s3 cp ./dumped_fixtures/task.json s3://589623662327-fixtures-us-west-1/import/task.json
+            - cd ./ops/scripts/helper
+            - python scheduler_load_fixtures.py production "s3://589623662327-fixtures-us-west-1/import/content.json;s3://589623662327-fixtures-us-west-1/import/task.json"

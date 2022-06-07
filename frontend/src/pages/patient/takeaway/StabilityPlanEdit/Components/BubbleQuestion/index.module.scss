@@ -1,0 +1,44 @@
+.container {
+    display: flex;
+    flex-direction: column;
+}
+.title {
+    color: rgba(0, 0, 0, 1);
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    letter-spacing: 1.13px;
+    line-height: 23px;
+}
+.bubbles {
+    display: flex;
+    flex-wrap: wrap;
+}
+.label {
+    display: flex;
+    margin-right: 15px;
+    margin-bottom: 18px;
+    align-items: center;
+    justify-content: center;
+    height: 36px;
+    font-size: 14px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    border: 1px solid rgba(109, 114, 120, 1);
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 1);
+    color: rgba(73, 74, 75, 1);
+    cursor: pointer;
+}
+.checked {
+    color: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(150, 151, 152, 1);
+    background-color: rgba(73, 77, 87, 1);
+}
+.checkbox {
+    position: absolute;
+    visibility: hidden;
+    left: -100px;
+}

@@ -1,0 +1,54 @@
+.header {
+    display: flex;
+    flex-direction: column;
+    line-height: 36px;
+    color: rgba(36, 36, 50, 1);
+
+    h4 {
+        margin: 0;
+        margin-bottom: 6.4rem;
+    }
+
+    .technicianOperated {
+        margin-bottom: 6.4rem;
+    }
+
+    .details {
+        display: flex;
+        flex-direction: row;
+
+        .record {
+            display: flex;
+            flex-direction: column;
+            min-width: 20rem;
+
+            span:nth-child(even) {
+                margin-top: 0.8rem;
+            }
+        }
+    }
+
+    .instructions {
+        font-size: 17px;
+        color: rgba(0, 0, 0, 1);
+    }
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    margin-top: 45px;
+    button:first-child {
+        margin-left: auto;
+        margin-right: 3.2rem;
+    }
+}
+
+.code {
+    min-height: 12rem;
+    font-weight: 300;
+    font-size: 9.6rem;
+    line-height: 12rem;
+    letter-spacing: 9px;
+    color: rgba(36, 36, 50, 1);
+}

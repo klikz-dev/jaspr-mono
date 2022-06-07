@@ -1,0 +1,42 @@
+.notes {
+    grid-column-start: col-start 1;
+    grid-column: 1 / -1;
+
+    &.indent {
+        grid-column-start: col-start 2;
+        grid-column: 2 / -1;
+    }
+
+    .providerComment {
+        display: flex;
+        flex-direction: column;
+        margin-top: 6px;
+        margin-bottom: 6px;
+
+        .providerNote {
+            font-size: 16px;
+            line-height: 20px;
+            color: rgba(0, 0, 0, 1);
+        }
+    }
+
+    .providerName {
+        font-size: 16px;
+        line-height: 20px;
+        color: #979797;
+    }
+
+    textarea {
+        background-color: rgba(109, 198, 210, 0.07);
+        resize: none;
+        width: 100%;
+        border: none;
+        outline: none;
+        height: 21px;
+    }
+
+    .error {
+        color: red;
+        font-size: 12px;
+    }
+}

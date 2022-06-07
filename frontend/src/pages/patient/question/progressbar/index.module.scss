@@ -1,0 +1,89 @@
+.container {
+    display: flex;
+    margin-left: 110px;
+    padding-left: 43px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: #eceef5;
+
+    &::before {
+        content: '';
+        display: block;
+        height: 17px;
+        background: linear-gradient(rgba(255, 255, 255, 0), #eceef5);
+        width: 100%;
+        position: absolute;
+        top: -17px;
+    }
+
+    .sections {
+        display: flex;
+        flex-grow: 1;
+        background-color: #eceef5;
+        padding-left: 43px;
+        .section {
+            position: relative;
+            display: flex;
+            flex-grow: 1;
+            flex-direction: column;
+
+            .title {
+                position: relative;
+                opacity: 0.9;
+                margin-bottom: 0.5rem;
+                color: #737ba7;
+                font-size: 14px;
+                font-weight: 600;
+                letter-spacing: 0.88px;
+                line-height: 16px;
+                text-transform: uppercase;
+                text-align: center;
+            }
+
+            &:not(:last-child) {
+                &::after {
+                    content: '\0000bb';
+                    position: absolute;
+                    right: -2px;
+                }
+            }
+
+            .bar {
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                height: 7px;
+                border-right: 3px solid #eceef5;
+                background-color: #d8d8d8;
+
+                span {
+                    background-color: #68bbd0;
+                }
+            }
+        }
+    }
+    .summaries {
+        display: flex;
+        background-color: #eceef5;
+        width: 153px;
+        padding-left: 1rem;
+        font-size: 14px;
+        font-weight: 600;
+        color: #585c72;
+        letter-spacing: 0.88px;
+        cursor: pointer;
+        text-transform: uppercase;
+
+        &::before {
+            content: '';
+            display: inline-block;
+            width: 19px;
+            height: 22px;
+            margin-right: 7px;
+            background-size: 19px 22px;
+            background-image: url('../../../../assets/summaries.png');
+        }
+    }
+}

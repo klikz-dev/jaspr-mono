@@ -1,0 +1,117 @@
+.techActivation {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.logo {
+    width: 102px;
+    height: 102px;
+    padding: 16px;
+}
+
+.outer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    width: 600px;
+    padding: 40px;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    background-color: rgba(38, 42, 65, 1);
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.header {
+    color: rgba(255, 255, 255, 1);
+    font-size: 28px;
+    line-height: 20px;
+    margin-top: 10px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.label {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    color: #ffffff;
+    justify-content: flex-end;
+}
+
+.formLabel {
+    margin-bottom: 3px;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0;
+    cursor: pointer;
+}
+
+.input {
+    height: 54px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    background-color: transparent;
+    color: rgba(255, 255, 255, 1);
+    font-size: 17px;
+    padding-left: 1rem;
+
+    &::placeholder {
+        color: rgba(255, 255, 255, 1);
+        opacity: 1;
+    }
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+
+    button {
+        margin: 0 1rem;
+    }
+}
+
+.error {
+    margin: 12px 0;
+    color: rgba(255, 0, 0, 1);
+    font-size: 17px;
+    line-height: 24px;
+    text-align: center;
+
+    &:empty {
+        display: none;
+    }
+}
+
+.confirmationTable {
+    width: 600px;
+    padding: 40px;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    color: rgba(255, 255, 255, 1);
+}
+
+.requirements {
+    color: rgba(255, 255, 255, 1);
+    ul {
+        margin-top: 0;
+    }
+}

@@ -1,0 +1,62 @@
+.topic {
+    display: flex;
+    max-height: 100%;
+    padding: 0 0.5rem;
+    margin: 0.5rem;
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 0;
+    margin: 0 27px 0 0;
+    flex: 0 0 203px;
+    transition: flex-basis 500ms ease-in-out;
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.topicOpen {
+    flex: 0 0 435px;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 203px;
+    height: 265px;
+    color: rgba(255, 255, 255, 1);
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 28px;
+    text-align: center;
+    letter-spacing: 1.38px;
+    transition: width 500ms ease-in-out;
+    flex-shrink: 0;
+}
+
+.detailsClosed {
+    width: 0;
+    overflow: hidden;
+}
+
+.stories {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.storyTitle {
+    visibility: visible;
+    display: flex;
+    flex-shrink: 0;
+    align-self: center;
+    margin: 10px;
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 1.38px;
+    line-height: 28px;
+}

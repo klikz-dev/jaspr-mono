@@ -1,0 +1,86 @@
+.outer {
+    display: flex;
+    flex-direction: column;
+    min-width: 580px;
+}
+
+.header {
+    color: rgba(36, 36, 50, 1);
+    padding: 27px 40px;
+    font-size: 28px;
+    letter-spacing: 0;
+    line-height: 20px;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    padding: 40px 100px;
+}
+
+.row {
+    display: flex;
+}
+
+.field {
+    display: flex;
+    color: rgba(36, 36, 50, 1);
+    font-size: 24px;
+    width: 50%;
+    letter-spacing: 0;
+}
+
+.value {
+    display: flex;
+    width: 50%;
+    color: rgba(36, 35, 51, 1);
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 0;
+}
+
+.warning {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 60px;
+    color: rgba(36, 36, 50, 1);
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: 31px;
+    text-align: center;
+
+    .important {
+        display: flex;
+        color: rgba(204, 9, 0, 1);
+    }
+}
+
+.deviceInstructions {
+    font-size: 26px;
+    line-height: 20px;
+    padding: 27px 40px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+
+    button {
+        margin: auto;
+        margin-bottom: 1rem;
+    }
+}
+
+.close {
+    position: absolute;
+    top: 13px;
+    right: 22px;
+    font-size: 34px;
+    color: rgba(36, 36, 50, 1);
+    cursor: pointer;
+    user-select: none;
+}

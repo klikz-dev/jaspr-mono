@@ -1,0 +1,13 @@
+##### Environment Variables which should be altered to suit ######
+
+# DB file to reset the database with
+PSQL_DUMP_FILE = jaspr_reset_db.sql.gz
+
+# DB info
+DB_NAME = jaspr
+
+# Virtualenv Info
+VENV_NAME = japsr
+
+# Docker compose file to use
+COMPOSE_FILE = local.yml

@@ -1,0 +1,57 @@
+.container {
+    position: fixed;
+    bottom: 0;
+    right: 37%;
+    display: flex;
+    height: 59px;
+    width: 185px;
+    padding: 14px;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f2f2f3;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    user-select: none;
+    overflow: hidden;
+    cursor: pointer;
+
+    .chevronDown {
+        transform: rotate(180deg);
+        font-size: 45px;
+        font-weight: 100;
+        transition: transform 1s ease;
+    }
+
+    .text {
+        color: #35364c;
+        font-size: 17px;
+        font-weight: 600;
+        letter-spacing: 0;
+        line-height: 22px;
+    }
+
+    .count {
+        display: flex;
+        width: 26px;
+        height: 24px;
+        padding-bottom: 2px;
+        align-items: center;
+        justify-content: center;
+        background-repeat: no-repeat;
+        font-family: sans-serif;
+        background-size: 26px 24px;
+        background-image: url('../../../../../assets/speechBubble.svg');
+    }
+
+    &.commentView {
+        height: 30px;
+        width: 56px;
+
+        .chevronDown {
+            transform: rotate(0deg);
+            font-size: 45px;
+            font-weight: 100;
+            margin: auto;
+        }
+    }
+}

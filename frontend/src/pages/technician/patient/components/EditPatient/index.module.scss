@@ -1,0 +1,119 @@
+.editPatient {
+    display: flex;
+    flex: 1 0 auto;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.outer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    padding: 40px;
+    padding: 0;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.header {
+    margin: 0;
+    margin-bottom: 0.8rem;
+}
+
+.subheader {
+    color: rgba(77, 77, 77, 1);
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex: 1 0 auto;
+    width: 100%;
+    margin-top: 4rem;
+}
+
+.label {
+    width: 31%;
+    display: flex;
+    flex-direction: column;
+    color: rgba(36, 36, 50, 1);
+    justify-content: flex-end;
+    margin-right: 1.6rem;
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.formLabel {
+    margin-bottom: 0.8rem;
+    cursor: pointer;
+}
+
+.input {
+    height: 64px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    background-color: rgba(243, 243, 243, 1);
+    font-size: 17px;
+    padding-left: 1rem;
+    color: rgba(36, 36, 50, 1);
+    letter-spacing: 0;
+    border: 0.5px solid rgba(0, 0, 0, 1);
+
+    &::placeholder {
+        color: rgba(122, 122, 136, 1);
+        opacity: 1;
+    }
+}
+
+.select {
+    height: 64px;
+    border-radius: 10px;
+    background-color: rgba(243, 243, 243, 1);
+    color: rgba(36, 36, 50, 1);
+    font-size: 17px;
+    padding-left: 1rem;
+    border: 0.5px solid rgba(0, 0, 0, 1);
+
+    &::placeholder {
+        color: rgba(255, 255, 255, 1);
+        opacity: 1;
+    }
+}
+
+.option {
+    background-color: rgba(38, 42, 65, 1);
+    color: rgba(255, 255, 255, 1);
+    font-size: 17px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 4rem;
+    margin-left: auto;
+    margin-bottom: 1rem;
+
+    button {
+        margin: 0 1rem;
+    }
+}
+
+.error {
+    color: rgba(255, 0, 0, 1);
+    font-size: 17px;
+    line-height: 24px;
+    text-align: center;
+
+    &:empty {
+        display: none;
+    }
+}

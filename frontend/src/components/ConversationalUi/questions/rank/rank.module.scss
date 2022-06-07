@@ -1,0 +1,53 @@
+.mostImportant,
+.leastImportant {
+    text-transform: uppercase;
+    padding: 16px 14px;
+    color: rgba(123, 123, 123, 1);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.leastImportant {
+    border-bottom: 1px solid rgba(151, 151, 151, 0.3);
+}
+
+.ranker {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    .rankItem {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        min-height: 74px;
+        border-top: 1px solid rgba(151, 151, 151, 0.3);
+        background-color: #fff;
+        cursor: pointer;
+        user-select: none;
+
+        &:last-of-type {
+            border-bottom: 1px solid rgba(151, 151, 151, 0.3);
+        }
+
+        .index {
+            display: flex;
+            flex-shrink: 0;
+            justify-content: center;
+            flex-basis: 120px;
+            color: rgba(70, 70, 70, 1);
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .labels {
+            display: flex;
+            flex-grow: 1;
+            opacity: 0.6;
+            color: rgba(58, 58, 58, 1);
+            font-size: 15px;
+            letter-spacing: -0.24px;
+            line-height: 26px;
+        }
+    }
+}

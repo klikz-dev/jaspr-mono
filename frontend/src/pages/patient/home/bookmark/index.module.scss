@@ -1,0 +1,52 @@
+.bookmark {
+    position: relative;
+    display: flex;
+
+    flex-grow: 0;
+    margin: 2px 0;
+    margin-right: auto;
+    align-items: auto;
+    flex-basis: 50%;
+    flex-direction: row;
+    margin: 50px 0;
+    height: auto;
+}
+
+.info {
+    text-align: center;
+    padding-right: 10px;
+}
+
+.title {
+    opacity: 0.9;
+    color: rgba(255, 255, 255, 1);
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 0.94px;
+}
+
+.description {
+    display: block;
+    opacity: 0.8;
+    color: rgba(255, 255, 255, 1);
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.iconContainer {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    height: 150px;
+    width: 150px;
+    margin-right: 13px;
+    border-radius: 4px;
+    background-color: rgba(46, 49, 73, 1);
+}
+
+.icon {
+    z-index: 2;
+    opacity: 0.2;
+}

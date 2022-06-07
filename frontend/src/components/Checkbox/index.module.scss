@@ -1,0 +1,50 @@
+/*! autoprefixer grid: autoplace */
+
+.checkbox {
+    position: relative;
+    display: flex;
+    align-items: center;
+    user-select: none;
+
+    input {
+        position: absolute;
+        opacity: 0;
+        width: 1em;
+        height: 1em;
+
+        & + span {
+            display: inline-grid;
+            flex-shrink: 0;
+            margin: 4px;
+            width: 2.1rem;
+            height: 2.1rem;
+            background-color: rgba(255, 255, 255, 1);
+            border: 2px solid rgba(17, 115, 131, 1);
+            border-radius: 3px;
+            transition: background-color 0.3s;
+
+            &.large {
+                width: 3.2rem;
+                height: 3.2rem;
+                border-radius: 4px;
+            }
+        }
+
+        &:checked + span {
+            background-color: rgba(23, 155, 176, 1);
+            background-image: url('./checkmark.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        &:disabled + span {
+            border: 2px solid rgba(127, 127, 127, 1);
+        }
+    }
+    .labels {
+        display: flex;
+        flex-direction: column;
+        margin-left: 1rem;
+        line-height: 2rem;
+    }
+}

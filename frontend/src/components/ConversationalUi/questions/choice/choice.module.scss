@@ -1,0 +1,97 @@
+.titles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+    min-height: 52px;
+
+    .instruction {
+        align-self: center;
+        color: rgba(47, 52, 79, 1);
+        font-size: 22px;
+        letter-spacing: -0.27px;
+        line-height: 26px;
+        text-align: center;
+        max-width: 600px;
+        padding: 0 30px;
+    }
+
+    .subtitle {
+        display: flex;
+        align-self: center;
+        color: #2f344f;
+        font-size: 20px;
+        letter-spacing: -0.27px;
+        line-height: 26px;
+        text-align: center;
+        max-width: 600px;
+        font-weight: 300;
+    }
+}
+
+.options {
+    display: flex;
+    flex-direction: row;
+    padding: 0 165px;
+    justify-content: center;
+
+    .option {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 22px;
+        border: 1px solid #979797;
+        flex-grow: 1;
+
+        &:not(:last-child) {
+            border-right: none;
+        }
+
+        &:first-child {
+            border-top-left-radius: 6px;
+            border-bottom-left-radius: 6px;
+        }
+
+        &:last-child {
+            border-top-right-radius: 6px;
+            border-bottom-right-radius: 6px;
+        }
+
+        .label {
+            display: flex;
+            padding: 18px;
+            color: rgba(74, 74, 74, 1);
+            font-family: 'Source Sans Pro';
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: 1.25px;
+            flex-grow: 1;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+
+            &:checked + .label {
+                background-color: rgba(88, 92, 114, 0.8);
+                color: #fff;
+            }
+        }
+    }
+
+    &.vertical {
+        flex-direction: column;
+        padding: 0 200px;
+
+        .option {
+            border-right: 1px solid #979797;
+            border-radius: 6px;
+        }
+    }
+}

@@ -1,0 +1,57 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-shrink: 0;
+    justify-content: space-between;
+    align-items: center;
+    height: 48px;
+    max-height: 48px;
+    border-radius: 6px;
+    margin: 10px 27px;
+    overflow: hidden;
+    background-color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+.row {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+}
+
+.name {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    height: 43px;
+    padding: 0 0.5rem 0 1.2rem;
+}
+
+.nameText {
+    font-size: 16px;
+    color: #030303;
+}
+
+.save {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1.2rem;
+    height: 43px;
+    width: 40px;
+    padding: 5px;
+}
+
+.progress {
+    height: 5px;
+    width: 100%;
+    background-color: #d7d7d7;
+}
+
+.track {
+    height: 100%;
+    background-color: #50a7bd;
+}

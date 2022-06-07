@@ -1,0 +1,88 @@
+/*! autoprefixer grid: autoplace */
+
+.questionRank {
+    width: 100%;
+
+    .header {
+        display: grid;
+        grid-template-columns: 0.5fr 1fr 1.8fr 0.7fr;
+        grid-template-areas: 'Header-Rank Header-Item Header-Response Header-Rating';
+        row-gap: 5px;
+        .rankHeader,
+        .itemHeader,
+        .responseHeader,
+        .ratingHeader {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            padding: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 18px;
+            letter-spacing: 0.25px;
+            text-transform: uppercase;
+            color: rgba(0, 0, 0, 1);
+            text-align: center;
+            border-bottom: 1px solid rgba(151, 151, 151, 0.4);
+        }
+    }
+
+    .rankHeader {
+        grid-area: Header-Rank;
+    }
+
+    .itemHeader {
+        grid-area: Header-Item;
+    }
+
+    .responseHeader {
+        grid-area: Header-Response;
+    }
+
+    .ratingHeader {
+        grid-area: Header-Rating;
+        justify-content: center;
+    }
+
+    .row {
+        display: grid;
+        grid-template-columns: 0.5fr 1fr 1.8fr 0.7fr;
+        grid-template-areas: 'Rank Item Response Rating';
+        row-gap: 5px;
+        .rank {
+            grid-area: Rank;
+            display: flex;
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 24px;
+            color: rgba(0, 0, 0, 1);
+            justify-content: center;
+        }
+        .item {
+            grid-area: Item;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 24px;
+            letter-spacing: -0.2px;
+            color: rgba(0, 0, 0, 1);
+        }
+        .response {
+            grid-area: Response;
+            font-size: 18px;
+            line-height: 24px;
+            letter-spacing: -0.2px;
+            color: rgba(0, 0, 0, 1);
+            &:before,
+            &:after {
+                content: '"';
+            }
+        }
+        .rating {
+            grid-area: Rating;
+            font-size: 18px;
+            line-height: 24px;
+            color: rgba(0, 0, 0, 1);
+            text-align: center;
+        }
+    }
+}

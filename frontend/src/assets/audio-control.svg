@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="36px" height="36px" viewBox="0 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>Group 3</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-26.7%" y="-26.7%" width="153.3%" height="153.3%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="1.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Jaspr-App-db-08-(1)" transform="translate(-803.000000, -130.000000)">
+            <g id="Group-3" filter="url(#filter-1)" transform="translate(806.000000, 132.000000)">
+                <circle id="Oval-Copy-3" fill="#FFFFFF" cx="15" cy="15" r="15"></circle>
+                <g id="Group-10" transform="translate(9.000000, 9.000000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.32352941">
+                    <path d="M0,3.62633624 L0,8.26050614 C0,8.51857608 0.185569645,8.72800588 0.414513399,8.72800588 L1.94691622,8.72800588 C2.0016928,8.72800588 2.05579865,8.74035493 2.10655083,8.76429697 L4.20355169,10.2212328 C4.45954837,10.341699 4.6261139,10.623711 4.6261139,10.9359656 L4.6261139,11.2252861 C4.6261139,11.6532185 4.93353349,12 5.31294516,12 C5.69258041,12 6,11.6532185 6,11.2252861 L6,0.774713851 C6,0.346781476 5.69258041,0 5.31294516,0 C4.93353349,0 4.6261139,0.346781476 4.6261139,0.774713851 L4.6261139,0.937267668 C4.6261139,1.24876615 4.46044268,1.53002205 4.20578747,1.65099233 L2.10632725,3.12229339 C2.0553515,3.14648745 2.00057491,3.15908852 1.94535118,3.15908852 L0.414513399,3.15908852 C0.185569645,3.15908852 0,3.36851832 0,3.62633624 Z" id="Stroke-1-Copy" stroke="#4A4A4A"></path>
+                    <path d="M8,4 C8,4 9,4.77318436 9,6.03674736 C9,7.30031037 8,8 8,8" id="Stroke-3-Copy" stroke="#33A5BD"></path>
+                    <path d="M9,1 C9,1 12,2.21250818 12,5.46198914 C12,8.71121413 9,10 9,10" id="Stroke-5-Copy" stroke="#33A5BD"></path>
+                    <path d="M2.5,3.15034624 L2.5,8.49489524" id="Stroke-7-Copy" stroke="#4A4A4A"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

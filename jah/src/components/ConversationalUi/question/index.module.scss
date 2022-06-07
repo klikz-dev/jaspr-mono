@@ -1,0 +1,286 @@
+$containerPadding: 40px;
+
+.progressBar {
+    display: flex;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 20px;
+    background-color: #d8d8d8;
+    margin-top: auto;
+
+    .complete {
+        display: flex;
+        flex-grow: 1;
+        background-color: #8aa39f;
+    }
+    .inProgress {
+        flex-grow: 1;
+        display: flex;
+    }
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    height: 100%;
+
+    .instructions {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 0;
+        flex-shrink: 0;
+        flex-basis: 292px;
+        padding: 0 16px;
+        background-color: #ffffff;
+        //box-shadow: 1px 2px 7px 0 rgba(0, 0, 0, 0.2);
+        overflow-y: scroll;
+
+        .guideProfile {
+            display: flex;
+            align-items: center;
+            margin-top: 42px;
+            margin-bottom: 1em;
+            flex-shrink: 0;
+
+            img {
+                height: 64px;
+                width: 64px;
+                border-radius: 32px;
+            }
+            .name {
+                margin-left: 15px;
+                color: #000000;
+                font-size: 24px;
+                font-weight: 600;
+                letter-spacing: -0.2px;
+            }
+        }
+
+        .guideText {
+            color: rgba(74, 74, 74, 1);
+            font-size: 20px;
+            line-height: 26px;
+            white-space: pre-wrap;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            padding: 6px;
+            border-radius: 8px;
+            background-color: rgba(244, 244, 244, 1);
+
+            &:not(:first-child) {
+                margin-top: 12px;
+            }
+        }
+
+        .footer {
+            margin-top: auto;
+            margin-bottom: 41px;
+
+            .breadcrumb {
+                opacity: 0.8;
+                color: #1e1e1e;
+                font-size: 18px;
+                font-weight: 600;
+                letter-spacing: -0.22px;
+                line-height: 26px;
+            }
+        }
+    }
+
+    .questionContainer {
+        overflow-y: scroll;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        padding: 0 $containerPadding;
+        align-items: center;
+        background-color: #eceef5;
+
+        .hamburgerContainer {
+            position: relative;
+            width: calc(100% + #{$containerPadding});
+        }
+
+        .title {
+            margin: 24px;
+            opacity: 0.8;
+            color: #1e1e1e;
+            font-size: 18px;
+            font-weight: 600;
+            letter-spacing: -0.22px;
+        }
+
+        .subQuestion {
+            display: flex;
+            flex-direction: column;
+            margin-top: 40px;
+            border-top: 1px solid rgba(151, 151, 151, 0.3);
+            width: 100%;
+
+            &:first-child {
+                border-top: none;
+            }
+        }
+
+        .questions {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .stackedQuestions {
+            display: flex;
+            justify-content: center;
+
+            .subQuestion {
+                display: inline-flex;
+                border-top: none;
+                max-width: 50%;
+            }
+
+            hr {
+                display: none;
+            }
+        }
+
+        .question {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex-shrink: 0;
+            width: 100%;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            background-color: #ffffff;
+            //box-shadow: 1px 2px 7px 0 rgba(0, 0, 0, 0.2);
+
+            .buttons {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin: 34px;
+
+                .back {
+                    color: rgba(51, 165, 189, 1);
+                    font-size: 19px;
+                    cursor: pointer;
+                    user-select: none;
+                }
+
+                .submit {
+                    margin-left: auto;
+                    padding: 14px 33px;
+                    border-radius: 6px;
+                    background-color: rgba(51, 165, 189, 1);
+                    color: rgba(255, 255, 255, 1);
+                    font-size: 19px;
+                    font-weight: 600;
+                    cursor: pointer;
+                    user-select: none;
+                }
+
+                &.disabled {
+                    .back {
+                        color: rgba(151, 151, 151, 0.6);
+                        cursor: auto;
+                    }
+
+                    .submit {
+                        background-color: rgba(151, 151, 151, 0.6);
+                        cursor: auto;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.offlineModal {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    max-width: 100%;
+    max-height: 100%;
+    height: 239px;
+    width: 529px;
+    background-color: rgba(255, 255, 255, 1);
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 31px;
+    color: rgba(44, 45, 65, 1);
+
+    .closeButton {
+        display: flex;
+        width: 17px;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+    }
+
+    .button {
+        background-color: rgba(51, 165, 189, 1);
+        border-radius: 6px;
+        width: 168px;
+        height: 48px;
+        display: flex;
+        font-weight: normal;
+        color: rgba(255, 255, 255, 1);
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        user-select: none;
+    }
+}
+
+.enter {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    animation-name: fadeInOpacity;
+    animation-delay: 0.4s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+}
+.enterDone {
+    opacity: 1;
+    height: auto;
+}
+.exit {
+    opacity: 1;
+    height: 0;
+    overflow: hidden;
+    animation-name: fadeOutOpacity;
+    animation-iteration-count: 1;
+    animation-timing-function: ease;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+.exitDone {
+    opacity: 0;
+}
+
+@keyframes fadeInOpacity {
+    0% {
+        opacity: 0;
+        height: auto;
+    }
+    100% {
+        opacity: 1;
+        height: auto;
+    }
+}
+
+@keyframes fadeOutOpacity {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}

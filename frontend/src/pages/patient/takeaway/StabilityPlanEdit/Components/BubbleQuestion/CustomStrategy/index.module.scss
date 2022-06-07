@@ -1,0 +1,27 @@
+.measure {
+    position: absolute;
+    visibility: hidden;
+    left: -10000px;
+    width: auto;
+    height: auto;
+    white-space: nowrap;
+    padding: 8px 16px 6px 16px; // Compare to input.  Added pixel to account for border
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 36px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    border-radius: 4px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(150, 151, 152, 1);
+    background-color: rgba(120, 126, 142, 1);
+}

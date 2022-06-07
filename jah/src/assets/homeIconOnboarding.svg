@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="29px" height="31px" viewBox="0 0 29 31" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>home</title>
+    <g id="Onboarding" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Onboarding11" transform="translate(-178.000000, -721.000000)" fill="#68BBD0" fill-rule="nonzero">
+            <g id="home" transform="translate(178.500000, 721.000000)">
+                <path d="M14,7 L26,16.8571429 L26,30 L2,30 L2,16.8571429 L14,7 Z M15.2830612,1.90281224 L28,12.5381038 L28,17 L14,5.28725811 L0,17 L0,12.5381038 L12.7169388,1.90281224 C13.4595751,1.2817388 14.5404249,1.2817388 15.2830612,1.90281224 Z" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,26 @@
+.addButton {
+    position: relative;
+    display: flex;
+    align-self: flex-start;
+    align-items: center;
+    justify-content: center;
+    height: 36px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    border-radius: 4px;
+    color: rgba(73, 74, 75, 1);
+    border: 1px solid rgba(150, 151, 152, 1);
+    background-color: rgba(255, 255, 255, 1);
+    padding: 9.5px 32.5px 9.5px 43.5px;
+    cursor: pointer;
+
+    &::before {
+        content: '+';
+        position: absolute;
+        left: 15px;
+        font-size: 36px;
+        font-weight: 200;
+    }
+}

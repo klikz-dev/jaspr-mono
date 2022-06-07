@@ -1,0 +1,57 @@
+@import 'typography.scss';
+
+html {
+    display: flex;
+    height: 100%;
+    font-size: 62.5%;
+}
+
+body {
+    display: flex;
+    flex-grow: 1;
+    margin: 0;
+    padding: 0;
+    font-family: 'Source Sans Pro';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-overflow-scrolling: none; /* Is this a valid value?  Confirm what we were trying to do on mobile safari and update */
+    background: linear-gradient(90deg, rgba(56, 60, 88, 1) 0%, rgba(52, 50, 69, 1) 100%);
+    @extend .typography--body2;
+
+    @media print {
+        background-color: white !important;
+    }
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Source Sans Pro';
+}
+
+/* Fix ResizeObserver Error in Chromium based browsers
+https://bugs.chromium.org/p/chromium/issues/detail?id=809574#c20
+*/
+video::-webkit-media-controls-timeline {
+    align-self: center;
+    width: calc(100% - 32px);
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    & > div {
+        @media only screen and (min-width: 1024px) {
+            flex-direction: row;
+            height: 100%;
+        }
+        @media print {
+            background-color: white !important;
+        }
+    }
+}
+
+.ReactModal__Body--open {
+    overflow: hidden;
+}

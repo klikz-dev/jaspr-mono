@@ -1,0 +1,229 @@
+[
+  {
+    "model": "auth.group",
+    "pk": 1,
+    "fields": {
+      "name": "Technician",
+      "permissions": []
+    }
+  },
+  {
+    "model": "auth.group",
+    "pk": 2,
+    "fields": {
+      "name": "Patient",
+      "permissions": []
+    }
+  },
+  {
+    "model": "scheduler.cronjob",
+    "pk": 1,
+    "fields": {
+      "created": "2020-08-28T21:58:11.812Z",
+      "modified": "2022-04-19T21:48:47.443Z",
+      "name": "Transcode Media",
+      "callable": "django.core.management.call_command",
+      "enabled": true,
+      "queue": "low",
+      "job_id": "django-rq-scheduler:cron-job:1",
+      "repeat": null,
+      "timeout": null,
+      "cron_string": "2,17,32,47 * * * *"
+    }
+  },
+  {
+    "model": "scheduler.cronjob",
+    "pk": 2,
+    "fields": {
+      "created": "2020-08-28T21:59:02.853Z",
+      "modified": "2022-04-19T21:48:47.406Z",
+      "name": "Check for Completed Transcodes",
+      "callable": "django.core.management.call_command",
+      "enabled": true,
+      "queue": "low",
+      "job_id": "django-rq-scheduler:cron-job:2",
+      "repeat": null,
+      "timeout": null,
+      "cron_string": "3,18,33,48 * * * *"
+    }
+  },
+  {
+    "model": "scheduler.cronjob",
+    "pk": 3,
+    "fields": {
+      "created": "2020-08-28T23:17:29.808Z",
+      "modified": "2022-04-19T21:48:47.426Z",
+      "name": "Delete Failed Jobs",
+      "callable": "django.core.management.call_command",
+      "enabled": true,
+      "queue": "low",
+      "job_id": "django-rq-scheduler:cron-job:3",
+      "repeat": null,
+      "timeout": 360,
+      "cron_string": "9,39 * * * *"
+    }
+  },
+  {
+    "model": "scheduler.cronjob",
+    "pk": 4,
+    "fields": {
+      "created": "2020-08-28T21:58:11.812Z",
+      "modified": "2022-04-20T00:42:43.803Z",
+      "name": "Auto Send Notes to EHR",
+      "callable": "django.core.management.call_command",
+      "enabled": true,
+      "queue": "low",
+      "job_id": "django-rq-scheduler:cron-job:4",
+      "repeat": null,
+      "timeout": null,
+      "cron_string": "* * * * *"
+    }
+  },
+  {
+    "model": "scheduler.cronjob",
+    "pk": 5,
+    "fields": {
+      "created": "2022-04-19T21:53:17.669Z",
+      "modified": "2022-04-20T00:43:36.801Z",
+      "name": "Check Notes for problems",
+      "callable": "django.core.management.call_command",
+      "enabled": true,
+      "queue": "low",
+      "job_id": "django-rq-scheduler:cron-job:5",
+      "repeat": null,
+      "timeout": null,
+      "cron_string": "0 3 * * *"
+    }
+  },
+  {
+    "model": "scheduler.jobarg",
+    "pk": 1,
+    "fields": {
+      "arg_type": "str_val",
+      "str_val": "transcode_media",
+      "int_val": null,
+      "bool_val": false,
+      "datetime_val": null,
+      "content_type": [
+        "scheduler",
+        "cronjob"
+      ],
+      "object_id": 1
+    }
+  },
+  {
+    "model": "scheduler.jobarg",
+    "pk": 2,
+    "fields": {
+      "arg_type": "str_val",
+      "str_val": "check_for_completed_transcodes",
+      "int_val": null,
+      "bool_val": false,
+      "datetime_val": null,
+      "content_type": [
+        "scheduler",
+        "cronjob"
+      ],
+      "object_id": 2
+    }
+  },
+  {
+    "model": "scheduler.jobarg",
+    "pk": 5,
+    "fields": {
+      "arg_type": "str_val",
+      "str_val": "delete_failed_jobs",
+      "int_val": null,
+      "bool_val": false,
+      "datetime_val": null,
+      "content_type": [
+        "scheduler",
+        "cronjob"
+      ],
+      "object_id": 3
+    }
+  },
+  {
+    "model": "scheduler.jobarg",
+    "pk": 6,
+    "fields": {
+      "arg_type": "str_val",
+      "str_val": "send_notes_to_ehr",
+      "int_val": null,
+      "bool_val": false,
+      "datetime_val": null,
+      "content_type": [
+        "scheduler",
+        "cronjob"
+      ],
+      "object_id": 4
+    }
+  },
+  {
+    "model": "scheduler.jobarg",
+    "pk": 7,
+    "fields": {
+      "arg_type": "str_val",
+      "str_val": "check_notes_for_problems",
+      "int_val": null,
+      "bool_val": false,
+      "datetime_val": null,
+      "content_type": [
+        "scheduler",
+        "cronjob"
+      ],
+      "object_id": 5
+    }
+  },
+  {
+    "model": "scheduler.jobkwarg",
+    "pk": 1,
+    "fields": {
+      "arg_type": "int_val",
+      "str_val": "",
+      "int_val": 168,
+      "bool_val": false,
+      "datetime_val": null,
+      "content_type": [
+        "scheduler",
+        "cronjob"
+      ],
+      "object_id": 3,
+      "key": "high"
+    }
+  },
+  {
+    "model": "scheduler.jobkwarg",
+    "pk": 2,
+    "fields": {
+      "arg_type": "int_val",
+      "str_val": "",
+      "int_val": 168,
+      "bool_val": false,
+      "datetime_val": null,
+      "content_type": [
+        "scheduler",
+        "cronjob"
+      ],
+      "object_id": 3,
+      "key": "default"
+    }
+  },
+  {
+    "model": "scheduler.jobkwarg",
+    "pk": 3,
+    "fields": {
+      "arg_type": "int_val",
+      "str_val": "",
+      "int_val": 168,
+      "bool_val": false,
+      "datetime_val": null,
+      "content_type": [
+        "scheduler",
+        "cronjob"
+      ],
+      "object_id": 3,
+      "key": "low"
+    }
+  }
+]

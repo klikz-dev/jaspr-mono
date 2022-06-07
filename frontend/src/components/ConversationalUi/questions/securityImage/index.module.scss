@@ -1,0 +1,51 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding: 0 164px;
+
+    .imageSelect {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 158px;
+        width: 100%;
+        flex-shrink: 0;
+        align-self: stretch;
+        min-height: 158px;
+
+        img {
+            flex-shrink: 0;
+            height: 130px;
+            width: 130px;
+            margin: 0 10px;
+            opacity: 0.4;
+            //box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+
+            &.selected {
+                opacity: 1;
+            }
+            &.allUnselected {
+                opacity: 1;
+            }
+        }
+    }
+
+    .instruction {
+        display: flex;
+        align-self: center;
+        color: #d2000d;
+        font-size: 20px;
+    }
+}
+
+.completeMessage {
+    background-color: #75798c;
+    border-radius: 8px;
+    border: 1px solid #979797;
+    color: #ffffff;
+    font-size: 24px;
+    margin-left: auto;
+    margin-right: 176px;
+    padding: 30px;
+}

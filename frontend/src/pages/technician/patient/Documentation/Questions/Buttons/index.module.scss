@@ -1,0 +1,25 @@
+/*! autoprefixer grid: autoplace */
+
+.questionButtons {
+    display: grid;
+    grid-template-columns: 3.55fr 0.7fr;
+    row-gap: 5px;
+    grid-template-areas: 'Question Answer';
+
+    .question {
+        grid-area: Question;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 24px;
+        letter-spacing: -0.2px;
+        color: rgba(0, 0, 0, 1);
+    }
+
+    .answer {
+        grid-area: Answer;
+        font-size: 18px;
+        line-height: 24px;
+        color: rgba(0, 0, 0, 1);
+        text-align: center;
+    }
+}

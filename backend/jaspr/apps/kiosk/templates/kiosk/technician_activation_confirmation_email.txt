@@ -1,0 +1,9 @@
+Congrats on activating your Jaspr Tech account. If you did not activate your account, please email support@jasprhealth.com as soon as possible.
+
+Best,
+
+Jaspr Health Team
+
+Click or copy paste the link below into your browser to log in to Jaspr.
+
+{{ frontend_tech_login_url }}

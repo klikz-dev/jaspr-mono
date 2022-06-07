@@ -1,0 +1,54 @@
+.container {
+    flex: 1;
+    height: 100%;
+    width: 100%;
+    background-color: #eceef5;
+}
+
+.survey {
+    padding-top: 6rem;
+    width: 100%;
+    padding-bottom: 768px;
+    background-color: #eceef5;
+}
+
+.offlineModal {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    max-width: 100%;
+    max-height: 100%;
+    height: 239px;
+    width: 529px;
+    background-color: rgba(255, 255, 255, 1);
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 31px;
+    color: rgba(44, 45, 65, 1);
+
+    .closeButton {
+        display: flex;
+        width: 17px;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+    }
+
+    .button {
+        background-color: rgba(51, 165, 189, 1);
+        border-radius: 6px;
+        width: 168px;
+        height: 48px;
+        display: flex;
+        font-weight: normal;
+        color: rgba(255, 255, 255, 1);
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        user-select: none;
+    }
+}

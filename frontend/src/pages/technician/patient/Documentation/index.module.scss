@@ -1,0 +1,64 @@
+.documentation {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    flex-shrink: 0;
+
+    .sectionLinks {
+        padding: 42px;
+        width: 281px;
+
+        .sectionLink {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 28px;
+            padding-left: 9px;
+            font-size: 16px;
+            color: rgba(151, 151, 151, 1);
+            line-height: 26px;
+
+            span:first-child {
+                display: flex;
+                text-transform: uppercase;
+                font-variant: small-caps;
+            }
+
+            span:last-child {
+                font-size: 18px;
+                color: #179bb0;
+            }
+
+            &.active {
+                border-left: 5px solid #cbcbcb;
+                padding-left: 4px;
+
+                span:last-child {
+                    color: black;
+                }
+            }
+        }
+    }
+
+    section {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        flex-shrink: 0;
+    }
+
+    .question {
+        margin-bottom: 12px;
+        border-bottom: 1px solid rgba(151, 151, 151, 0.4);
+        padding-bottom: 12px;
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        div {
+            flex: 1;
+            flex-shrink: 0;
+            margin-top: 6px;
+        }
+    }
+}

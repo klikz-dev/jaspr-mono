@@ -1,0 +1,31 @@
+.container {
+    display: flex;
+    margin: 45px 192px 14px 171px;
+    align-items: center;
+
+    .marks {
+        width: 3px;
+        height: 3px;
+        background-color: #979797;
+    }
+
+    .end {
+        display: flex;
+        flex-direction: column;
+        margin: 0 20px;
+        text-align: center;
+        color: #4a4a4a;
+        font-weight: 600;
+        .value {
+            font-size: 20px;
+            letter-spacing: 2.39px;
+            line-height: 25px;
+        }
+        .label {
+            text-transform: uppercase;
+            font-size: 13px;
+            line-height: 14px;
+            letter-spacing: 1.08px;
+        }
+    }
+}

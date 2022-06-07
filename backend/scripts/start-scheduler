@@ -1,0 +1,60 @@
+#!/bin/bash
+
+echo "Apply database migrations"
+python manage.py migrate
+echo "Done with migrations"
+
+if [[ $LOAD_FIXTURES = "True" ]]
+then
+    echo "Loading fixtures"
+
+    IFS=';' read -ra FIXTURES <<< "$FIXTURE_LIST"
+
+    for FIXTURE in "${FIXTURES[@]}"; do
+        echo "processing fixture: ${FIXTURE}"
+        if [[ $FIXTURE == s3://* ]]
+        then
+          echo "is s3 fixture"
+          aws s3 cp "${FIXTURE}" /tmp/fixture.json
+          python manage.py loaddata /tmp/fixture.json
+          rm /tmp/fixture.json
+        else
+          echo "is project fixture"
+          python manage.py loaddata "${FIXTURE}"
+        fi
+        echo "fixture loaded."
+    done
+
+    echo "Done with fixtures"
+else
+    echo "Skipped fixtures."
+fi
+
+if [[ $SAVE_FIXTURES = "True" ]]
+then
+    echo "Saving fixtures step."
+    mkdir ~/dumped_fixtures
+    python manage.py dump_fixtures -o ~/dumped_fixtures/content.json content
+    python manage.py dump_fixtures -o ~/dumped_fixtures/task.json task
+    aws s3 cp ~/dumped_fixtures/content.json "s3://${SAVE_FIXTURE_BUCKET}/export/content.json"
+    aws s3 cp ~/dumped_fixtures/task.json "s3://${SAVE_FIXTURE_BUCKET}/export/task.json"
+    echo "Saving fixtures complete."
+else
+    echo "Skipping save fixtures step."
+fi
+
+if [[ $GENERATE_STATIC_TOKEN = "True" ]]
+then
+    echo "OTP Static Token:"
+    python manage.py addstatictoken $STATIC_TOKEN_USER
+    echo "Done create static token."
+else
+    echo "Skipping generating static token"
+fi
+
+echo "Preparing periodic jobs"
+python manage.py prepare_periodic_jobs
+echo "Finished preparing periodic jobs"
+
+rm -f '/app/scheduler.pid'
+rqscheduler --url "${REDIS_URL}" --pid /app/scheduler.pid

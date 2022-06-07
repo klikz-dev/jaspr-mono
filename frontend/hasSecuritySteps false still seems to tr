@@ -1,0 +1,9 @@
+hasSecuritySteps false still seems to trigger lockout screen
+
+
+
+Able to save a duplicate Warning Sign, but Coping Skills works fine (the duplicate warning signs goes to BE too) if this logic to disallow does not currently exist, we can punt. other wise should be enacted
+
+Removing a Coping Skill does not automatically take it out of the ranker like it does on CUI BUT it does save it.. so I think this is okay for now.
+
+If you add a duplicate Coping Skill (after already having one), it adds two to the ranker (ignorable for now)

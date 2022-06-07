@@ -1,0 +1,21 @@
+.container {
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #2f344f;
+    border-color: rgba(227, 227, 227, 0.42);
+    border-top-width: 1px;
+}
+
+.menuItemText {
+    color: #f8f8f8;
+    margin-top: auto;
+    margin-bottom: 9px;
+    font-size: 10px;
+    font-weight: 300;
+    letter-spacing: 0;
+    text-align: center;
+}
+
+.icon {
+    height: 22px;
+}

@@ -1,0 +1,98 @@
+[
+  {
+    "name": "DJANGO_SETTINGS_MODULE",
+    "value": "jaspr.settings.dev"
+  },
+  {
+    "name": "AWS_STORAGE_BUCKET_NAME",
+    "value": "jaspr-production-media"
+  },
+  {
+    "name": "CDN_DOMAIN",
+    "value": "release-media.jaspr-development.com"
+  },
+  {
+    "name": "AWS_TRANSCODE_PIPELINE_ID",
+    "value": "1588696408720-4184bg"
+  },
+  {
+    "name": "TWILIO_ACCOUNT_SID",
+    "value": "ACe8395c53126e52355b0df298cc3778c5"
+  },
+  {
+    "name": "TWILIO_VERIFY_SID",
+    "value": "VA3fef783238a4c6ad3dd365d38ac03121"
+  },
+  {
+    "name": "TWILIO_PHONE_NUMBER",
+    "value": "+12063098341"
+  },
+  {
+    "name": "FRONTEND_URL_BASE",
+    "value": "${frontend_url}"
+  },
+  {
+    "name": "BACKEND_URL_BASE",
+    "value": "${backend_url}"
+  },
+  {
+    "name": "PYTHONHASHSEED",
+    "value": "random"
+  },
+  {
+    "name": "DJANGO_DEBUG",
+    "value": "True"
+  },
+  {
+    "name": "LOAD_FIXTURES",
+    "value": "${load_fixtures}"
+  },
+  {
+    "name": "FIXTURE_LIST",
+    "value": "${fixture_list}"
+  },
+  {
+    "name": "ENVIRONMENT",
+    "value": "development"
+  },
+  {
+    "name": "DJANGO_DEFAULT_FROM_EMAIL",
+    "value": "Jaspr Health Integration <noreply@jaspr-development.com>"
+  },
+  {
+    "name": "GIT_BRANCH",
+    "value": "${git_branch}"
+  },
+  {
+    "name": "GIT_HASH",
+    "value": "${git_hash}"
+  },
+  {
+    "name": "SAVE_FIXTURES",
+    "value": "False"
+  },
+  {
+    "name": "SAVE_FIXTURE_BUCKET",
+    "value": "jaspr-release-fixtures"
+  },
+  {
+    "name": "INCLUDE_DEPRECATED_URLS",
+    "value": "False"
+  },
+    {
+    "name": "GENERATE_STATIC_TOKEN",
+    "value": "False"
+  },
+  {
+    "name": "STATIC_TOKEN_USER",
+    "value": "dev@jasprhealth.com"
+  },
+  {
+    "name": "FRESHDESK_SUPPORT_URL",
+    "value": "https://jasprhealth.freshdesk.com/"
+  },
+  {
+    "name": "FRESHDESK_SSO_REDIRECT_URL",
+    "value": "https://jasprhealth.myfreshworks.com/sp/OIDC/401416776881633258/implicit"
+  }
+]

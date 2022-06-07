@@ -1,0 +1,36 @@
+.comments {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
+    width: 100%;
+    .previousComments {
+    }
+    .newComment {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        height: 244px;
+        padding-top: 16px;
+        padding-bottom: 10px;
+        padding-left: 20px;
+        padding-right: 26px;
+        background-color: rgba(109, 198, 210, 0.07);
+
+        .title {
+            margin-bottom: 9px;
+            font-weight: 600;
+            font-size: 18px;
+            color: rgba(110, 110, 110, 1);
+        }
+        textarea {
+            height: 131px;
+            margin-bottom: 13px;
+            padding: 10px;
+            resize: none;
+            border: none;
+        }
+        button {
+            align-self: flex-end;
+        }
+    }
+}

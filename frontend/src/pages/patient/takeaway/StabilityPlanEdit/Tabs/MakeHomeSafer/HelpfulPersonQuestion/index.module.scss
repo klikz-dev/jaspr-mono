@@ -1,0 +1,84 @@
+.container {
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.question {
+    color: rgba(0, 0, 0, 1);
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1.13px;
+    line-height: 23px;
+}
+
+.yesno {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: auto;
+    user-select: none;
+}
+
+.label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 34px;
+    width: 52px;
+    border: 1px solid rgba(109, 114, 120, 1);
+    background-color: rgba(255, 255, 255, 1);
+    cursor: pointer;
+}
+
+.yes {
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.no {
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    border-left: none;
+}
+
+.checked {
+    color: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(150, 151, 152, 1);
+    background-color: rgba(120, 126, 142, 1);
+}
+
+.checkbox {
+    position: absolute;
+    visibility: hidden;
+    left: -100px;
+}
+
+.whoQuestion {
+    display: flex;
+    margin-right: 30px;
+    margin-left: 50px;
+}
+
+.who {
+    max-width: 310px;
+    flex: 1 0 auto;
+    padding: 8px;
+    border: none;
+    border-bottom: 1px solid rgba(151, 151, 151, 1);
+    border-radius: 4px;
+    color: rgba(74, 74, 74, 1);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.75px;
+    line-height: 15px;
+
+    &::placehoder {
+        color: rgba(73, 74, 75, 0.51);
+        font-weight: normal;
+    }
+}

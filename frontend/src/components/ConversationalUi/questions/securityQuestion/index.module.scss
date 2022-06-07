@@ -1,0 +1,36 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 20px 200px 0;
+
+    input {
+        outline: none;
+        border: none;
+        border-bottom: 1px solid #979797;
+        background: transparent;
+        margin: 1em 0;
+        padding: 0.1em 0.5em;
+        font-size: 24px;
+        letter-spacing: -0.3px;
+        color: #595959;
+    }
+
+    .instruction {
+        display: flex;
+        align-self: center;
+        color: #d2000d;
+        font-size: 20px;
+    }
+}
+
+.completeMessage {
+    background-color: #75798c;
+    border-radius: 8px;
+    border: 1px solid #979797;
+    color: #ffffff;
+    font-size: 24px;
+    margin-left: auto;
+    margin-right: 176px;
+    padding: 30px;
+}

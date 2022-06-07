@@ -1,0 +1,38 @@
+.person {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 50%;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.profileImage {
+    display: flex;
+    width: 100%;
+    height: 162px;
+    border-radius: 6px;
+}
+
+.banner {
+    display: flex;
+    position: absolute;
+    bottom: 0px;
+    min-height: 37px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.8;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    background-color: rgba(73, 74, 97, 0.84);
+}
+
+.bannerText {
+    font-weight: 600;
+    font-size: 1rem;
+    color: #fff;
+}

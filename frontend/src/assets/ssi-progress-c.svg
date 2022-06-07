@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="34px" height="34px" viewBox="0 0 34 34" version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <circle stroke="#DADADA" stroke-width="7" cx="17" cy="17" r="13"></circle>
+        <path d="M24.3772628,29.1286923 C25.5945929,28.4236438 26.6869865,27.5268071 27.6131117,26.4795142 C29.6406729,24.1866813 30.8713077,21.1727096 30.8713077,17.8713077 C30.8713077,10.691606 25.0510095,4.87130774 17.8713077,4.87130774 C12.926871,4.87130774 8.62715139,7.63167002 6.42912779,11.6954158 C5.43545238,13.5325408 4.87130774,15.6360427 4.87130774,17.8713077" stroke="#6CC5D4" stroke-width="7" transform="translate(17.871308, 17.000000) rotate(-270.000000) translate(-17.871308, -17.000000) "></path>
+        <rect fill="#FFFFFF" x="16" y="0" width="2" height="11"></rect>
+        <rect fill="#FFFFFF" transform="translate(29.000000, 24.000000) rotate(-240.000000) translate(-29.000000, -24.000000) " x="28" y="18.5" width="2" height="11"></rect>
+        <rect fill="#FFFFFF" transform="translate(5.000000, 24.000000) rotate(-300.000000) translate(-5.000000, -24.000000) " x="4" y="18.5" width="2" height="11"></rect>
+    </g>
+</svg>

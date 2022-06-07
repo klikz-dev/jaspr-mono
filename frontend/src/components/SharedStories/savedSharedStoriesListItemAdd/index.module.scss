@@ -1,0 +1,21 @@
+@import '../../layouts/lists/smallTileListItemAdd.module.scss';
+
+.plusItem {
+    composes: plusItem;
+}
+
+.image {
+    composes: image;
+}
+
+.regularItem {
+    composes: regularItem;
+}
+
+.verticalPlusLine {
+    composes: verticalPlusLine;
+}
+
+.horizontalPlusLine {
+    composes: horizontalPlusLine;
+}

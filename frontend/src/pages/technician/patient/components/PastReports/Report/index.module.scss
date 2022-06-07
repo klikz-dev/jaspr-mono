@@ -1,0 +1,51 @@
+.modalContainer {
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    margin-top: 97px;
+    position: fixed;
+    inset: 0px;
+
+    @media print {
+        margin-top: 0;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+
+        header {
+            display: flex;
+            font-size: 24px;
+            line-height: 30px;
+            color: rgba(0, 0, 0, 1);
+            align-items: center;
+
+            @media print {
+                display: none;
+            }
+
+            img {
+                width: 26px;
+                height: 24px;
+                margin-left: 14px;
+            }
+
+            .close {
+                margin-left: auto;
+                font-weight: normal;
+                font-size: 20px;
+                color: rgba(23, 155, 176, 1);
+                text-decoration: none;
+            }
+        }
+        .date {
+            font-size: 16px;
+            line-height: 20px;
+            color: rgba(0, 0, 0, 1);
+        }
+        .note {
+            white-space: pre-wrap;
+        }
+    }
+}

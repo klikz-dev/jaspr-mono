@@ -1,0 +1,118 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 42px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(90, 97, 132, 1);
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: rgba(107, 117, 184, 1);
+    align-items: center;
+    justify-content: center;
+}
+
+.title {
+    margin-left: 20px;
+    font-size: 18px;
+    letter-spacing: 1.125px;
+    text-transform: uppercase;
+}
+
+.tooltip {
+    position: relative;
+    z-index: 1;
+}
+
+.tipIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(84, 142, 143, 1);
+    width: 23px;
+    height: 23px;
+    border-radius: 50%;
+    margin-left: 23px;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 1);
+}
+
+.tooltipContainer {
+    position: absolute;
+    left: 75px;
+    top: -21px;
+    right: 30px;
+    width: 345px;
+    min-height: 190px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.5);
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 23px;
+        left: -9px;
+        width: 20px;
+        height: 20px;
+        transform: rotate(45deg);
+        box-shadow: -2px 3px 3px rgba(0, 0, 0, 0.2);
+        background-color: #fff;
+    }
+}
+
+.tooltipText {
+    display: flex;
+    align-items: center;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 18px;
+    line-height: 23px;
+    color: rgba(74, 74, 74, 1);
+}
+
+.tooltipClose {
+    display: flex;
+    height: 36px;
+    width: 166px;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(109, 198, 210, 1);
+    border-radius: 4px;
+    color: rgba(255, 255, 255, 1);
+    border: none;
+    outline: none;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.content {
+    position: relative;
+    display: flex;
+    flex: 1 0 auto;
+    padding-top: 21px;
+    padding-bottom: 21px;
+    padding-left: 45px;
+    background-color: rgb(255, 255, 255);
+}

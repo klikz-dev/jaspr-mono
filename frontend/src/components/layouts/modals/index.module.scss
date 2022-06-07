@@ -1,0 +1,84 @@
+.modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex-direction: column;
+
+    h2 {
+        display: flex;
+        color: rgba(44, 45, 65, 1);
+        font-size: 24px;
+        font-weight: bold;
+        line-height: 31px;
+        text-align: center;
+        margin: 0 0.5rem 0.75rem;
+    }
+
+    p {
+        color: rgba(44, 45, 65, 1);
+        font-size: 20px;
+        line-height: 25px;
+        text-align: center;
+        margin: 0 0.5rem 0.75rem;
+    }
+}
+
+.spacer {
+    height: 0.1rem;
+    width: 0.1rem;
+    margin-bottom: 0.65rem;
+}
+
+.buttonGroup {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+
+    div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px;
+        min-width: 178px;
+        font-size: 19px;
+        font-weight: 600;
+        line-height: 26px;
+        text-align: center;
+        border-radius: 6px;
+        padding: 0.75rem 2.25rem;
+        cursor: pointer;
+        user-select: none;
+    }
+}
+
+.outlinedButton {
+    border: 1px solid rgba(51, 165, 189, 1);
+    color: rgba(51, 165, 189, 1);
+}
+
+.filledButton {
+    background-color: rgba(51, 165, 189, 1);
+    color: rgba(255, 255, 255, 1);
+}
+
+.crossedPlus {
+    cursor: pointer;
+    position: relative;
+    font-size: 2rem;
+    line-height: 1.5ex;
+    align-self: flex-end;
+    max-height: 80%;
+
+    &::before {
+        content: '×';
+        color: #cccccc;
+    }
+
+    &:hover {
+        &::before {
+            color: #2c2d41;
+        }
+    }
+}

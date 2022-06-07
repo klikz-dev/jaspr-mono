@@ -1,0 +1,46 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-shrink: 1;
+    align-items: center;
+
+    .guide {
+        opacity: 0;
+    }
+
+    &:last-child {
+        .guide {
+            opacity: 1;
+        }
+        .message {
+            &::before {
+                content: ' ';
+                position: absolute;
+                border-top: 10px solid transparent;
+                border-bottom: 10px solid transparent;
+                border-right: 10px solid #ffffff;
+                left: -10px;
+                top: 50%;
+                margin-top: -10px;
+            }
+        }
+    }
+}
+
+.guide {
+    display: flex;
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+}
+
+.message {
+    position: relative;
+    border-radius: 4px;
+    background-color: #ffffff;
+    color: #595959;
+    padding-left: 22px;
+    padding-right: 22px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+}

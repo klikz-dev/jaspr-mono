@@ -1,0 +1,39 @@
+.base {
+    background-color: white;
+    width: 100%;
+}
+
+.controlBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 83px;
+    background: linear-gradient(90deg, rgba(52, 50, 69, 1) 0%, rgba(56, 60, 88, 1) 100%);
+}
+
+@media print {
+    .controlBar {
+        display: none;
+    }
+}
+
+.metadata {
+    display: flex;
+}
+
+.record {
+    margin-left: 25px;
+    margin-right: 25px;
+    color: rgba(255, 255, 255, 1);
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 1.09px;
+}
+
+.buttons {
+    display: flex;
+    button {
+        margin-right: 25px;
+    }
+}

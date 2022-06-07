@@ -1,0 +1,80 @@
+.patientPath {
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 10px;
+    h3 {
+        margin: 0;
+        padding-left: 2.4rem;
+        padding-top: 2.4rem;
+    }
+    .details {
+        flex-direction: column;
+        h5 {
+            margin: 0;
+        }
+        .status {
+            font-size: 16px;
+            color: rgba(151, 151, 151, 1);
+        }
+    }
+    .timeline {
+        position: relative;
+        display: flex;
+        padding: 24px 24px 22px 72px;
+        flex-direction: column;
+
+        &:before {
+            /* Evaluate if this still ends in the correct spot if user changes font-size */
+            content: '';
+            position: absolute;
+            top: 60px;
+            bottom: 44px;
+            left: 39px;
+            border-left: 1px solid rgba(187, 188, 204, 1);
+        }
+
+        a {
+            display: flex;
+        }
+    }
+
+    .cspData {
+        display: flex;
+        flex-direction: row;
+        margin-top: 12px;
+        .cspDatum {
+            flex-basis: 50%;
+
+            .value {
+                font-size: 16px;
+                line-height: 20px;
+                color: rgba(36, 36, 50, 1);
+            }
+        }
+    }
+
+    .linkButtons {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .addActivityRow {
+        position: relative;
+        margin-right: auto;
+
+        svg {
+            position: absolute;
+            top: 50%;
+            margin-top: -12px;
+            left: -44px;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                bottom: 90px;
+                left: 39px;
+                border-left: 1px solid rgba(187, 188, 204, 1);
+            }
+        }
+    }
+}

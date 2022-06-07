@@ -1,0 +1,24 @@
+.pastReports {
+    margin: 0 2.4rem;
+    .details {
+        h6 {
+            margin: 1.6rem 0;
+            margin-top: 4rem;
+        }
+        flex-direction: column;
+    }
+
+    hr {
+        height: 0px;
+        border: none;
+        border-top: 1px solid rgba(184, 188, 204, 0.3);
+    }
+
+    .title {
+        margin-top: 29px;
+    }
+
+    p {
+        color: rgba(77, 77, 77, 1);
+    }
+}

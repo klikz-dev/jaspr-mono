@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="21px" height="15px" viewBox="0 0 21 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>smallScreen</title>
+    <g id="Video-Layouts" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="smallScreen" transform="translate(0.001783, 0.006102)" stroke="#FFFFFF" stroke-width="2.5">
+            <polyline id="Path-2" transform="translate(2.004277, 1.990822) scale(-1, -1) translate(-2.004277, -1.990822) " points="4.00855379 2.66453526e-15 3.40172335e-13 2.66453526e-15 3.40172335e-13 3.98164396"></polyline>
+            <polyline id="Path-2" transform="translate(2.004277, 11.972466) scale(-1, 1) translate(-2.004277, -11.972466) " points="4.00855379 9.98164396 3.40172335e-13 9.98164396 3.40172335e-13 13.9632879"></polyline>
+            <polyline id="Path-2" transform="translate(18.012831, 1.990822) scale(1, -1) translate(-18.012831, -1.990822) " points="20.0171076 2.66453526e-15 16.0085538 2.66453526e-15 16.0085538 3.98164396"></polyline>
+            <polyline id="Path-2" points="20.0171076 9.98164396 16.0085538 9.98164396 16.0085538 13.9632879"></polyline>
+        </g>
+    </g>
+</svg>
